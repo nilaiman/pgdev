@@ -1,48 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    VitePWA({
-      registerType: 'autoUpdate',
-      includeAssets: [
-        'favicon.png',
-        'apple-touch-icon.png',
-        'masked-icon.svg',
-      ],
-      manifest: {
-        id: '/',
-        name: 'PG.Dev Software',
-        short_name: 'PG.Dev',
-        description:
-          'Sitios web, sistemas y automatización para empresas en América Latina.',
-        theme_color: '#030014',
-        background_color: '#030014',
-        display: 'standalone',
-        start_url: '/',
-        scope: '/',
-        lang: 'es',
-        icons: [
-          {
-            src: '/pwa-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-          {
-            src: '/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable',
-          },
-        ],
-      },
-    }),
-  ],
+  plugins: [react()],
 })
