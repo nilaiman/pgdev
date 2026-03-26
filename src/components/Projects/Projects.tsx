@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Lock } from 'lucide-react'
+import { ArrowRight, Lock } from 'lucide-react'
 import kushiimg from '../../assets/projects/figma-kushi.png'
 import drBrunoImage from '../../assets/projects/figma-drbruno.png'
 import maxxSorvetesImage from '../../assets/projects/figma-maxsorvetes.png'
