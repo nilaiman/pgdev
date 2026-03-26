@@ -7,13 +7,13 @@ function About() {
       <div className="container">
         <div className="about__grid">
           <div className="about__content">
-            <span className="section-tag">Sobre a PG.Dev</span>
+            <span className="section-tag">Sobre a PabloG.Dev</span>
             <h2 className="section-title">
               Criando soluções digitais <br />
               <span>com código e propósito</span>
             </h2>
             <p className="about__description">
-              Sou desenvolvedor e fundador da PG.Dev. Minha missão é ajudar 
+              Sou desenvolvedor e fundador da PabloG.Dev - Minha missão é ajudar 
               negócios a terem presença digital de qualidade através de sites, 
               sistemas e automações feitos sob medida.
             </p>

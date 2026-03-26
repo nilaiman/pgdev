@@ -20,7 +20,7 @@ function Header() {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header__content">
         <a href="#inicio" className="header__logo" onClick={closeMenu}>
-          PG<span>.Dev</span>
+          PabloG<span>.Dev</span>
         </a>
 
         <nav className="header__nav">
