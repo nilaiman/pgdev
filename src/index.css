@@ -806,7 +806,7 @@ main {
 @media (max-width: 480px) {
   .hero {
     padding: 40px 0;
-    margin-top: -15px;
+  
   }
   
   .hero__title {
