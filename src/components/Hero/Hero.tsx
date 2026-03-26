@@ -3,26 +3,40 @@ import { ArrowRight, Play } from 'lucide-react'
 import sistemaImage from '../../assets/projects/figma-bnbplaza.png'
 import drBrunoImage from '../../assets/projects/figma-drbruno.png'
 import maxxSorvetesImage from '../../assets/projects/figma-maxsorvetes.png'
+import kushiimg from '../../assets/projects/figma-kushi.png'
+import luckpetimg from '../../assets/projects/figmaluckpet.png'
 
 function Hero() {
   const projects = [
     {
       id: 1,
-      image: sistemaImage,
-      type: 'Sistema',
-      name: 'BNB Plaza'
-    },
-    {
-      id: 2,
       image: drBrunoImage,
       type: 'Site Institucional',
       name: 'Dr. Bruno Ribeiro'
     },
     {
+      id: 2,
+       image: sistemaImage,
+      type: 'Sistema',
+      name: 'BNB Plaza'
+    },
+    {
       id: 3,
       image: maxxSorvetesImage,
       type: 'Site Institucional',
-      name: 'Maxx Sorvetes'
+      name: 'Max Sorvetes'
+    },
+     {
+      id: 4,
+     image: kushiimg,
+type: 'E-commerce',
+name: 'Kushi'
+    },
+    {
+    id: 5,
+image: luckpetimg,
+type: 'E-commerce',
+name: 'LuckPet'
     }
   ]
   
