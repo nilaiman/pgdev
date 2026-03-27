@@ -7,11 +7,11 @@ function Contact() {
         <div className="contact__wrapper">
           <div className="contact__info">
             <h2 className="contact__title">
-              Pronto para dar o <span>próximo passo?</span>
+              ¿Listo para dar el <span>próximo paso?</span>
             </h2>
             <p className="contact__description">
-              Escolha a forma mais fácil de me chamar e vamos conversar sobre 
-              como posso ajudar seu negócio.
+              Elige la forma más fácil de contactarme y hablemos sobre 
+              cómo puedo ayudar a tu negocio.
             </p>
 
             <div className="contact__methods">
@@ -34,7 +34,7 @@ function Contact() {
                 </div>
                 <div>
                   <strong>WhatsApp</strong>
-                  <span>Resposta rápida</span>
+                  <span>Respuesta rápida</span>
                 </div>
                 <ArrowRight size={18} className="contact__method-arrow" />
               </a>
@@ -59,13 +59,13 @@ function Contact() {
             <div className="contact__card-icon">
               <Send size={32} />
             </div>
-            <h3>Atendimento personalizado</h3>
+            <h3>Atención personalizada</h3>
             <p>
-              Cada projeto é único e merece atenção especial. 
-              Vamos conversar sem compromisso.
+              Cada proyecto es único y merece atención especial. 
+              Hablemos sin compromiso.
             </p>
             <a href="https://wa.me/5511957989816" target="_blank" rel="noreferrer" className="contact__card-btn">
-              Falar agora
+              Hablar ahora
               <ArrowRight size={16} />
             </a>
           </div>

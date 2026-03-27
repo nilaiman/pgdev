@@ -11,7 +11,7 @@ function Hero() {
     {
       id: 1,
       image: drBrunoImage,
-      type: 'Site Institucional',
+      type: 'Sitio Institucional',
       name: 'Dr. Bruno Ribeiro'
     },
     {
@@ -23,7 +23,7 @@ function Hero() {
     {
       id: 3,
       image: maxxSorvetesImage,
-      type: 'Site Institucional',
+      type: 'Sitio Institucional',
       name: 'Max Sorvetes'
     },
      {
@@ -55,21 +55,21 @@ name: 'LuckPet'
         <div className="hero__wrapper">
           <div className="hero__left">
             <h1 className="hero__title">
-              Automatize seu negócio e <br />
-              <span>aumente seus resultados</span>
+              Automatiza tu negocio y <br />
+              <span>aumenta tus resultados</span>
             </h1>
             <p className="hero__text">
-              Soluções digitais para empresas que querem mais clientes, 
-              mais organização e menos trabalho manual.
+              Soluciones digitales para empresas que quieren más clientes, 
+              más organización y menos trabajo manual.
             </p>
             <div className="hero__buttons">
               <a href="#contato" className="hero__btn hero__btn--primary">
-                Solicitar orçamento
+                Solicitar presupuesto
                 <ArrowRight size={16} />
               </a>
               <a href="#projetos" className="hero__btn hero__btn--secondary">
                 <Play size={16} />
-                Ver projetos
+                Ver proyectos
               </a>
             </div>
           </div>

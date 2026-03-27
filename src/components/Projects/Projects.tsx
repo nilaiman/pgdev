@@ -10,39 +10,39 @@ function Projects() {
       id: 1,
       title: 'Kushi',
       category: 'E-commerce',
-      description: 'Loja virtual completa para moda masculina e feminina com catálogo organizado, filtros por categoria, promoções sazonais e blog de tendências.',
+      description: 'Tienda virtual completa para moda masculina y femenina con catálogo organizado, filtros por categoría, promociones estacionales y blog de tendencias.',
       image: kushiimg,
       link: 'https://pablog-7.github.io/ecommerce-kushi/',
-      tag: 'Destaque',
-      results: ['Catálogo com filtros inteligentes', 'Promoções e cupons automáticos', 'Blog integrado para engajamento', '100% responsivo em todos dispositivos']
+      tag: 'Destacado',
+      results: ['Catálogo con filtros inteligentes', 'Promociones y cupones automáticos', 'Blog integrado para engagement', '100% responsive en todos dispositivos']
     },
     {
       id: 2,
       title: 'Maxx Sorvetes',
-      category: 'Site Institucional',
-      description: 'Site que conecta clientes locais à sorveteria, com cardápio digital e botões diretos para WhatsApp e localização.',
+      category: 'Sitio Institucional',
+      description: 'Sitio que conecta clientes locales a la heladería, con menú digital y botones directos para WhatsApp y ubicación.',
       image: maxxSorvetesImage,
       link: 'https://maxsorvetesibertioga.com.br/',
-      results: ['Cardápio digital de fácil navegação', 'Contato direto via WhatsApp', 'Localização integrada com Google Maps', 'SEO para encontrar negócio local']
+      results: ['Menú digital de fácil navegación', 'Contacto directo vía WhatsApp', 'Ubicación integrada con Google Maps', 'SEO para encontrar negocio local']
     },
     {
       id: 3,
       title: 'Dr. Bruno Ribeiro',
-      category: 'Site Institucional',
-      description: 'Site profissional para fisioterapeuta que facilita o contato com pacientes e gera mais agendamentos online.',
+      category: 'Sitio Institucional',
+      description: 'Sitio profesional para fisioterapeuta que facilita el contacto con pacientes y genera más citas online.',
       image: drBrunoImage,
       link: 'https://pablog-7.github.io/projeto-drbruno/',
-      results: ['Agendamento facilitado', 'Contato direto via WhatsApp', 'Presença digital profissional', 'Geração de leads qualificados']
+      results: ['Agendamiento facilitado', 'Contacto directo vía WhatsApp', 'Presencia digital profesional', 'Generación de leads calificados']
     },
     {
       id: 4,
       title: 'BNB Plaza',
-      category: 'Sistema de Gestão',
-      description: 'Plataforma completa de gestão imobiliária que centraliza operações financeiras, ocupações e relatórios em tempo real.',
+      category: 'Sistema de Gestión',
+      description: 'Plataforma completa de gestión inmobiliaria que centraliza operaciones financieras, ocupaciones y reportes en tiempo real.',
       image: sistemaImobiliarioImage,
       link: null,
       tag: 'Sistema Interno',
-      results: ['Dashboard financeiro em tempo real', 'Gestão de propriedades e ocupações', 'Relatórios automáticos em PDF', 'Sistema offline-first com sincronização']
+      results: ['Dashboard financiero en tiempo real', 'Gestión de propiedades y ocupaciones', 'Reportes automáticos en PDF', 'Sistema offline-first con sincronización']
     }
   ]
 
@@ -50,12 +50,12 @@ function Projects() {
     <section id="projetos" className="projects">
       <div className="container">
         <div className="projects__header">
-          <span className="projects__badge">Trabalhos realizados</span>
+          <span className="projects__badge">Trabajos realizados</span>
           <h2 className="projects__title">
-           Quem confia <span>no meu trabalho</span>
+           Quienes confían <span>en mi trabajo</span>
           </h2>
           <p className="projects__description">
-            Projetos entregues com foco em crescimento real para o seu negócio
+            Proyectos entregados con enfoque en crecimiento real para tu negocio
           </p>
         </div>
 
@@ -86,7 +86,7 @@ function Projects() {
 
                 {project.link ? (
                   <a href={project.link} className="showcase-item__link" target="_blank" rel="noreferrer">
-                    Ver projeto
+                    Ver proyecto
                     <ArrowRight size={16} />
                   </a>
                 ) : (
@@ -102,7 +102,7 @@ function Projects() {
 
         <div className="projects__footer">
           <a href="#contato" className="btn btn--primary">
-            Quero um projeto assim
+            Quiero un proyecto así
             <ArrowRight size={18} />
           </a>
         </div>

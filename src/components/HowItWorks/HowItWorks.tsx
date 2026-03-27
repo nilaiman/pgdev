@@ -4,26 +4,26 @@ function HowItWorks() {
   const steps = [
     {
       number: 1,
-      title: 'Entendimento',
-      description: 'Analisamos seu negócio e seus objetivos.',
+      title: 'Entendimiento',
+      description: 'Analizamos tu negocio y tus objetivos.',
       icon: Search
     },
     {
       number: 2,
-      title: 'Planejamento',
-      description: 'Estruturamos a melhor solução.',
+      title: 'Planificación',
+      description: 'Estructuramos la mejor solución.',
       icon: PenTool
     },
     {
       number: 3,
-      title: 'Desenvolvimento',
-      description: 'Construímos sua solução.',
+      title: 'Desarrollo',
+      description: 'Construimos tu solución.',
       icon: Code
     },
     {
       number: 4,
       title: 'Entrega',
-      description: 'Implementamos e garantimos o funcionamento.',
+      description: 'Implementamos y garantizamos el funcionamiento.',
       icon: Rocket
     }
   ]
@@ -32,12 +32,12 @@ function HowItWorks() {
     <section id="processo" className="how">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">Processo</span>
+          <span className="section-tag">Proceso</span>
           <h2 className="section-title">
-            Como funciona o desenvolvimento
+            Cómo funciona el desarrollo
           </h2>
           <p className="section-description">
-            Metodologia simples e eficiente para entregar resultados
+            Metodología simple y eficiente para entregar resultados
           </p>
         </div>
 

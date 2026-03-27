@@ -24,22 +24,22 @@ function Header() {
         </a>
 
         <nav className="header__nav">
-          <a href="#inicio">Início</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#projetos">Projetos</a>
+          <a href="#inicio">Inicio</a>
+          <a href="#servicos">Servicios</a>
+          <a href="#projetos">Proyectos</a>
           <a href="#sobre">Sobre</a>
-          <a href="#contato">Contato</a>
+          <a href="#contato">Contacto</a>
         </nav>
 
         <a href="#contato" className="header__cta">
           <Send size={18} />
-          <span>Solicitar orçamento</span>
+          <span>Solicitar presupuesto</span>
         </a>
 
         <button
           className={`header__menu-button ${menuOpen ? 'is-active' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={menuOpen}
           type="button"
         >
@@ -49,14 +49,14 @@ function Header() {
 
       <div className={`mobile-menu ${menuOpen ? 'mobile-menu--open' : ''}`}>
         <nav className="mobile-menu__nav">
-          <a href="#inicio" onClick={closeMenu}>Início</a>
-          <a href="#servicos" onClick={closeMenu}>Serviços</a>
-          <a href="#projetos" onClick={closeMenu}>Projetos</a>
+          <a href="#inicio" onClick={closeMenu}>Inicio</a>
+          <a href="#servicos" onClick={closeMenu}>Servicios</a>
+          <a href="#projetos" onClick={closeMenu}>Proyectos</a>
           <a href="#sobre" onClick={closeMenu}>Sobre</a>
-          <a href="#contato" onClick={closeMenu}>Contato</a>
+          <a href="#contato" onClick={closeMenu}>Contacto</a>
           <a href="#contato" className="mobile-menu__cta" onClick={closeMenu}>
             <Send size={16} />
-            Solicitar orçamento
+            Solicitar presupuesto
           </a>
         </nav>
       </div>

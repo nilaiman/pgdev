@@ -5,7 +5,7 @@ function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       className="whatsapp-float"
-      aria-label="Falar no WhatsApp"
+      aria-label="Hablar por WhatsApp"
     >
       <svg 
         xmlns="http://www.w3.org/2000/svg" 

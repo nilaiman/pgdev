@@ -7,19 +7,19 @@ function About() {
       <div className="container">
         <div className="about__grid">
           <div className="about__content">
-            <span className="section-tag">Sobre a PabloG.Dev</span>
+            <span className="section-tag">Sobre PabloG.Dev</span>
             <h2 className="section-title">
-              Criando soluções digitais <br />
-              <span>com código e propósito</span>
+              Creando soluciones digitales <br />
+              <span>con código y propósito</span>
             </h2>
             <p className="about__description">
-              Sou desenvolvedor e fundador da PabloG.Dev - Minha missão é ajudar 
-              negócios a terem presença digital de qualidade através de sites, 
-              sistemas e automações feitos sob medida.
+              Soy desarrollador y fundador de PabloG.Dev - Mi misión es ayudar 
+              a negocios a tener presencia digital de calidad a través de sitios web, 
+              sistemas y automatizaciones hechos a medida.
             </p>
             <p className="about__description">
-              Cada projeto é desenvolvido com atenção aos detalhes, foco em 
-              resultados e compromisso com a satisfação de quem confia no meu trabalho.
+              Cada proyecto se desarrolla con atención a los detalles, enfoque en 
+              resultados y compromiso con la satisfacción de quienes confían en mi trabajo.
             </p>
           </div>
 
@@ -30,11 +30,11 @@ function About() {
             <div className="about__stats">
               <div className="about__stat">
                 <Code size={20} />
-                <span>Projetos</span>
+                <span>Proyectos</span>
               </div>
               <div className="about__stat">
                 <Users size={20} />
-                <span>Atendimento</span>
+                <span>Atención</span>
               </div>
               <div className="about__stat">
                 <Heart size={20} />
