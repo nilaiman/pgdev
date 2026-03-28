@@ -1,52 +1,52 @@
 import { Globe, Settings, Bot, ArrowRight, CheckCircle, Shield, Clock, TrendingUp } from 'lucide-react'
 
-function Services() {
-  const services = [
+function Servicios() {
+  const servicios = [
     {
       icon: Globe,
-      title: 'Sites institucionais',
-      description: 'Páginas modernas que convertem visitantes em clientes.',
-      features: ['Design exclusivo', 'SEO otimizado', 'Responsivo', 'Carregamento rápido']
+      title: 'Sitios institucionales',
+      description: 'Páginas modernas que convierten visitantes en clientes.',
+      features: ['Diseño exclusivo', 'SEO optimizado', 'Responsivo', 'Carga rápida']
     },
     {
       icon: Settings,
       title: 'Sistemas personalizados',
-      description: 'Soluções sob medida que organizam e automatizam seu negócio.',
-      features: ['Gestão completa', 'Relatórios automáticos', 'Painel intuitivo', 'Segurança']
+      description: 'Soluciones a medida que organizan y automatizan tu negocio.',
+      features: ['Gestión completa', 'Reportes automáticos', 'Panel intuitivo', 'Seguridad']
     },
     {
       icon: Bot,
-      title: 'Automação',
-      description: 'Elimine tarefas manuais e ganhe tempo para crescer.',
-      features: ['Economia de tempo', 'Menos erros', 'Integrações', 'Escalável']
+      title: 'Automatización',
+      description: 'Elimina tareas manuales y gana tiempo para crecer.',
+      features: ['Ahorro de tiempo', 'Menos errores', 'Integraciones', 'Escalable']
     }
   ]
 
   return (
-    <section id="servicos" className="services">
+    <section id="servicios" className="services">
       <div className="container">
         <div className="services__hero">
           <h2 className="services__hero-title">
-            Seu negócio merece <span>tecnologia que funciona</span>
+            Tu negocio merece <span>tecnología que funciona</span>
           </h2>
           <p className="services__hero-text">
-            Desenvolvimento com foco em resultados, não só em código bonito
+            Desarrollo enfocado en resultados, no solo en código bonito
           </p>
         </div>
 
         <div className="services__cards">
-          {services.map((service, index) => {
-            const Icon = service.icon
+          {servicios.map((servicio, index) => {
+            const Icon = servicio.icon
             return (
               <div key={index} className="service-feature">
                 <div className="service-feature__icon">
                   <Icon size={32} />
                 </div>
                 <div className="service-feature__info">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <h3>{servicio.title}</h3>
+                  <p>{servicio.description}</p>
                   <ul className="service-feature__features">
-                    {service.features.map((feature, i) => (
+                    {servicio.features.map((feature, i) => (
                       <li key={i}>
                         <CheckCircle size={12} />
                         {feature}
@@ -54,7 +54,7 @@ function Services() {
                     ))}
                   </ul>
                 </div>
-                <a href="#contato" className="service-feature__arrow">
+                <a href="#contacto" className="service-feature__arrow">
                   <ArrowRight size={20} />
                 </a>
               </div>
@@ -66,22 +66,22 @@ function Services() {
           <div className="services__trust-item">
             <Shield size={24} />
             <div>
-              <strong>Código limpo</strong>
-              <span>Manutenção fácil</span>
+              <strong>Código limpio</strong>
+              <span>Mantenimiento fácil</span>
             </div>
           </div>
           <div className="services__trust-item">
             <Clock size={24} />
             <div>
               <strong>Entrega ágil</strong>
-              <span>Cumpro prazos</span>
+              <span>Cumplo plazos</span>
             </div>
           </div>
           <div className="services__trust-item">
             <TrendingUp size={24} />
             <div>
-              <strong>Suporte contínuo</strong>
-              <span>Após a entrega</span>
+              <strong>Soporte continuo</strong>
+              <span>Después de la entrega</span>
             </div>
           </div>
         </div>
@@ -90,4 +90,4 @@ function Services() {
   )
 }
 
-export default Services
+export default Servicios
