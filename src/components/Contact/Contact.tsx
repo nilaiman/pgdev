@@ -16,7 +16,7 @@ function Contact() {
 
             <div className="contact__methods">
               <a 
-                href="https://wa.me/5511957989816" 
+                href="https://wa.me/5511961111894" 
                 target="_blank" 
                 rel="noreferrer"
                 className="contact__method contact__method--whatsapp"
@@ -64,7 +64,7 @@ function Contact() {
               Cada proyecto es único y merece atención especial. 
               Hablemos sin compromiso.
             </p>
-            <a href="https://wa.me/5511957989816" target="_blank" rel="noreferrer" className="contact__card-btn">
+            <a href="https://wa.me/5511961111894" target="_blank" rel="noreferrer" className="contact__card-btn">
               Hablar ahora
               <ArrowRight size={16} />
             </a>
