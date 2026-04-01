@@ -2266,8 +2266,8 @@ main {
 }
 
 /* =====================================================
-   EXPERIENCE GATE - CLEAN PREMIUM
-   Com animação no ícone do robô
+   EXPERIENCE GATE - TEMA ESCURO ORIGINAL
+   Mascote branco e dourado
 ===================================================== */
 
 .experience-gate {
@@ -2312,68 +2312,201 @@ main {
 .experience-gate__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
-/* Animação do robô */
-.experience-gate__bot-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: botFloat 3s ease-in-out infinite;
+/* ========== GATO MÁGICO - Branco e Dourado ========== */
+.experience-gate__mascot {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.experience-gate__cat {
   position: relative;
+  width: 100%;
+  height: 100%;
+  animation: catFloat 3s ease-in-out infinite;
 }
 
-.experience-gate__bot-icon svg {
-  color: #c5a572;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 0px rgba(197, 165, 114, 0));
-  animation: botGlow 2s ease-in-out infinite;
+/* Orelhas */
+.experience-gate__cat-ear {
+  position: absolute;
+  width: 14px;
+  height: 16px;
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  top: -6px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Animação de flutuação */
-@keyframes botFloat {
+.experience-gate__cat-ear--left {
+  left: 6px;
+  transform: rotate(-10deg);
+}
+
+.experience-gate__cat-ear--right {
+  right: 6px;
+  transform: rotate(10deg);
+}
+
+/* Rosto */
+.experience-gate__cat-face {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #ffffff, #fafafa);
+  border-radius: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Olhos - Dourados */
+.experience-gate__cat-eye {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #c5a572;
+  border-radius: 50%;
+  top: 12px;
+  box-shadow: 0 0 4px rgba(197, 165, 114, 0.6);
+  animation: eyeGlow 2s ease-in-out infinite;
+}
+
+.experience-gate__cat-eye:first-of-type {
+  left: 8px;
+}
+
+.experience-gate__cat-eye:last-of-type {
+  right: 8px;
+}
+
+/* Bigodes - Dourados */
+.experience-gate__cat-whisker {
+  position: absolute;
+  width: 12px;
+  height: 1.5px;
+  background: #c5a572;
+  top: 18px;
+  animation: whiskerTwitch 2s ease-in-out infinite;
+}
+
+.experience-gate__cat-whisker:first-of-type {
+  left: -8px;
+  transform: rotate(-15deg);
+}
+
+.experience-gate__cat-whisker:last-of-type {
+  right: -8px;
+  transform: rotate(15deg);
+  animation: whiskerTwitchRight 2s ease-in-out infinite;
+}
+
+/* Nariz - Dourado */
+.experience-gate__cat-nose {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #c5a572;
+  border-radius: 50%;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 4px rgba(197, 165, 114, 0.4);
+}
+
+/* Coleira - Dourada */
+.experience-gate__cat-collar {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #c5a572, #e2b87a);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Animações */
+@keyframes catFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-3px) rotate(2deg); 
+  }
+}
+
+@keyframes eyeGlow {
+  0%, 100% { 
+    opacity: 0.7; 
+    box-shadow: 0 0 4px rgba(197, 165, 114, 0.6);
+  }
+  50% { 
+    opacity: 1; 
+    box-shadow: 0 0 8px rgba(197, 165, 114, 1);
+  }
+}
+
+@keyframes whiskerTwitch {
+  0%, 100% { 
+    transform: rotate(-15deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: rotate(-10deg);
+    opacity: 1;
+  }
+}
+
+@keyframes whiskerTwitchRight {
+  0%, 100% { 
+    transform: rotate(15deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: rotate(10deg);
+    opacity: 1;
+  }
+}
+
+/* Hover effect */
+.experience-gate__mascot:hover .experience-gate__cat {
+  animation: catWave 0.5s ease-in-out;
+}
+
+@keyframes catWave {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
-  50% {
-    transform: translateY(-3px) rotate(2deg);
-  }
-}
-
-/* Animação de brilho */
-@keyframes botGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 0px rgba(197, 165, 114, 0));
-  }
-  50% {
-    filter: drop-shadow(0 0 4px rgba(197, 165, 114, 0.6));
-  }
-}
-
-/* Efeito de pulso no hover */
-.experience-gate__bot-icon:hover svg {
-  animation: botSpin 0.5s ease-in-out;
-}
-
-@keyframes botSpin {
-  0% {
-    transform: rotate(0deg);
-  }
   25% {
-    transform: rotate(-10deg);
+    transform: translateY(-5px) rotate(-5deg);
   }
   75% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0deg);
+    transform: translateY(-2px) rotate(5deg);
   }
 }
 
+.experience-gate__mascot:hover .experience-gate__cat-eye {
+  animation: catBlink 0.3s ease-in-out;
+}
+
+@keyframes catBlink {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+/* Steps */
 .experience-gate__steps {
   display: flex;
   gap: 6px;
@@ -2393,6 +2526,7 @@ main {
   box-shadow: 0 0 8px rgba(197, 165, 114, 0.3);
 }
 
+/* Content */
 .experience-gate__content {
   padding: 32px 24px;
 }
@@ -2535,6 +2669,11 @@ main {
   
   .experience-gate__option {
     padding: 14px 18px;
+  }
+  
+  .experience-gate__mascot {
+    width: 38px;
+    height: 38px;
   }
 }
 
