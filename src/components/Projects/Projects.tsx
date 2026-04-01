@@ -1,110 +1,92 @@
-import { ArrowRight, Lock } from 'lucide-react'
-import kushiimg from '../../assets/projects/figma-kushi.png'
-import drBrunoImage from '../../assets/projects/figma-drbruno.png'
-import maxxSorvetesImage from '../../assets/projects/figma-maxsorvetes.png'
-import sistemaImobiliarioImage from '../../assets/projects/figma-bnbplaza.png'
+import { projectsData } from '../data/projectsData'
+import { useSiteExperience } from '../context/SiteExperienceContext'
 
 function Projects() {
-  const projects = [
-    {
-      id: 1,
-      title: 'Kushi',
-      category: 'E-commerce',
-      description: 'Tienda virtual completa para moda masculina y femenina con catálogo organizado, filtros por categoría, promociones estacionales y blog de tendencias.',
-      image: kushiimg,
-      link: 'https://pablog-7.github.io/ecommerce-kushi/',
-      tag: 'Destacado',
-      results: ['Catálogo con filtros inteligentes', 'Promociones y cupones automáticos', 'Blog integrado para engagement', '100% responsive en todos dispositivos']
-    },
-    {
-      id: 2,
-      title: 'Maxx Sorvetes',
-      category: 'Sitio Institucional',
-      description: 'Sitio que conecta clientes locales a la heladería, con menú digital y botones directos para WhatsApp y ubicación.',
-      image: maxxSorvetesImage,
-      link: 'https://maxsorvetesibertioga.com.br/',
-      results: ['Menú digital de fácil navegación', 'Contacto directo vía WhatsApp', 'Ubicación integrada con Google Maps', 'SEO para encontrar negocio local']
-    },
-    {
-      id: 3,
-      title: 'Dr. Bruno Ribeiro',
-      category: 'Sitio Institucional',
-      description: 'Sitio profesional para fisioterapeuta que facilita el contacto con pacientes y genera más citas online.',
-      image: drBrunoImage,
-      link: 'https://pablog-7.github.io/projeto-drbruno/',
-      results: ['Agendamiento facilitado', 'Contacto directo vía WhatsApp', 'Presencia digital profesional', 'Generación de leads calificados']
-    },
-    {
-      id: 4,
-      title: 'BNB Plaza',
-      category: 'Sistema de Gestión',
-      description: 'Plataforma completa de gestión inmobiliaria que centraliza operaciones financieras, ocupaciones y reportes en tiempo real.',
-      image: sistemaImobiliarioImage,
-      link: null,
-      tag: 'Sistema Interno',
-      results: ['Dashboard financiero en tiempo real', 'Gestión de propiedades y ocupaciones', 'Reportes automáticos en PDF', 'Sistema offline-first con sincronización']
-    }
-  ]
+  const { language, selectedService } = useSiteExperience()
+
+  const filteredProjects =
+    selectedService === ''
+      ? projectsData
+      : projectsData.filter((project) => project.category === selectedService)
+
+  const projectsToShow = filteredProjects.length > 0 ? filteredProjects : projectsData
 
   return (
     <section id="projetos" className="projects">
       <div className="container">
         <div className="projects__header">
-          <span className="projects__badge">Trabajos realizados</span>
+          <div className="projects__badge">
+            {language === 'pt' ? 'Trabalhos realizados' : 'Trabajos realizados'}
+          </div>
+
           <h2 className="projects__title">
-           Quienes confían <span>en mi trabajo</span>
+            {language === 'pt'
+              ? 'Quem confia no '
+              : 'Quienes confían en mi '}
+            <span>{language === 'pt' ? 'meu trabalho' : 'trabajo'}</span>
           </h2>
+
           <p className="projects__description">
-            Proyectos entregados con enfoque en crecimiento real para tu negocio
+            {language === 'pt'
+              ? 'Projetos entregues com foco em crescimento real para o seu negócio.'
+              : 'Proyectos entregados con enfoque en crecimiento real para tu negocio.'}
           </p>
         </div>
 
         <div className="projects__showcase">
-          {projects.map((project, index) => (
-            <div key={project.id} className={`showcase-item ${index % 2 === 1 ? 'showcase-item--reverse' : ''}`}>
+          {projectsToShow.map((project, index) => (
+            <article
+              key={project.id}
+              className={`showcase-item ${index % 2 !== 0 ? 'showcase-item--reverse' : ''}`}
+            >
               <div className="showcase-item__image">
                 <img src={project.image} alt={project.title} />
                 <div className="showcase-item__glow"></div>
+
                 {project.tag && (
-                  <span className="showcase-item__tag">{project.tag}</span>
+                  <div className="showcase-item__tag">
+                    {language === 'pt' ? project.tag.pt : project.tag.es}
+                  </div>
                 )}
               </div>
+
               <div className="showcase-item__content">
-                <span className="showcase-item__category">{project.category}</span>
+                <span className="showcase-item__category">
+                  {language === 'pt' ? project.typePt : project.typeEs}
+                </span>
+
                 <h3 className="showcase-item__title">{project.title}</h3>
-                <p className="showcase-item__description">{project.description}</p>
-                
-                {/* Lista de resultados/benefícios */}
+
+                <p className="showcase-item__description">
+                  {language === 'pt' ? project.descriptionPt : project.descriptionEs}
+                </p>
+
                 <ul className="showcase-item__results">
-                  {project.results.map((result, i) => (
-                    <li key={i}>
+                  {(language === 'pt' ? project.featuresPt : project.featuresEs).map((feature) => (
+                    <li key={feature}>
                       <span>✓</span>
-                      {result}
+                      {feature}
                     </li>
                   ))}
                 </ul>
 
                 {project.link ? (
-                  <a href={project.link} className="showcase-item__link" target="_blank" rel="noreferrer">
-                    Ver proyecto
-                    <ArrowRight size={16} />
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="showcase-item__link"
+                  >
+                    {language === 'pt' ? project.linkLabelPt : project.linkLabelEs} →
                   </a>
                 ) : (
-                  <div className="showcase-item__link showcase-item__link--disabled">
-                    <Lock size={14} />
-                    Sistema interno
-                  </div>
+                  <span className="showcase-item__link showcase-item__link--disabled">
+                    {language === 'pt' ? project.linkLabelPt : project.linkLabelEs}
+                  </span>
                 )}
               </div>
-            </div>
+            </article>
           ))}
-        </div>
-
-        <div className="projects__footer">
-          <a href="#contato" className="btn btn--primary">
-            Quiero un proyecto así
-            <ArrowRight size={18} />
-          </a>
         </div>
       </div>
     </section>

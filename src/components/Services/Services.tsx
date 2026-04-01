@@ -1,93 +1,68 @@
-import { Globe, Settings, Bot, ArrowRight, CheckCircle, Shield, Clock, TrendingUp } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
+import { servicesData } from '../data/servicesData'
+import { useSiteExperience } from '../context/SiteExperienceContext'
 
-function Servicios() {
-  const servicios = [
-    {
-      icon: Globe,
-      title: 'Sitios institucionales',
-      description: 'Páginas modernas que convierten visitantes en clientes.',
-      features: ['Diseño exclusivo', 'SEO optimizado', 'Responsivo', 'Carga rápida']
-    },
-    {
-      icon: Settings,
-      title: 'Sistemas personalizados',
-      description: 'Soluciones a medida que organizan y automatizan tu negocio.',
-      features: ['Gestión completa', 'Reportes automáticos', 'Panel intuitivo', 'Seguridad']
-    },
-    {
-      icon: Bot,
-      title: 'Automatización',
-      description: 'Elimina tareas manuales y gana tiempo para crecer.',
-      features: ['Ahorro de tiempo', 'Menos errores', 'Integraciones', 'Escalable']
-    }
-  ]
+function Services() {
+  const { language, selectedService } = useSiteExperience()
+
+  const filteredServices =
+    selectedService === ''
+      ? servicesData
+      : servicesData.filter((service) => service.key === selectedService)
 
   return (
-    <section id="servicios" className="services">
+    <section id="servicos" className="services">
       <div className="container">
         <div className="services__hero">
           <h2 className="services__hero-title">
-            Tu negocio merece <span>tecnología que funciona</span>
+            {language === 'pt'
+              ? 'Soluções pensadas para o seu '
+              : 'Soluciones pensadas para tu '}
+            <span>{language === 'pt' ? 'negócio' : 'negocio'}</span>
           </h2>
+
           <p className="services__hero-text">
-            Desarrollo enfocado en resultados, no solo en código bonito
+            {language === 'pt'
+              ? 'Veja com mais clareza o que está incluído na solução ideal para você.'
+              : 'Mira con más claridad qué está incluido en la solución ideal para ti.'}
           </p>
         </div>
 
         <div className="services__cards">
-          {servicios.map((servicio, index) => {
-            const Icon = servicio.icon
-            return (
-              <div key={index} className="service-feature">
-                <div className="service-feature__icon">
-                  <Icon size={32} />
-                </div>
-                <div className="service-feature__info">
-                  <h3>{servicio.title}</h3>
-                  <p>{servicio.description}</p>
-                  <ul className="service-feature__features">
-                    {servicio.features.map((feature, i) => (
-                      <li key={i}>
-                        <CheckCircle size={12} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <a href="#contacto" className="service-feature__arrow">
-                  <ArrowRight size={20} />
-                </a>
-              </div>
-            )
-          })}
-        </div>
+          {filteredServices.map((service) => (
+            <article key={service.id} className="service-feature">
+              <div className="service-feature__info">
+                <span className="service-feature__eyebrow">
+                  {language === 'pt' ? 'Solução selecionada' : 'Solución seleccionada'}
+                </span>
 
-        <div className="services__trust">
-          <div className="services__trust-item">
-            <Shield size={24} />
-            <div>
-              <strong>Código limpio</strong>
-              <span>Mantenimiento fácil</span>
-            </div>
-          </div>
-          <div className="services__trust-item">
-            <Clock size={24} />
-            <div>
-              <strong>Entrega ágil</strong>
-              <span>Cumplo plazos</span>
-            </div>
-          </div>
-          <div className="services__trust-item">
-            <TrendingUp size={24} />
-            <div>
-              <strong>Soporte continuo</strong>
-              <span>Después de la entrega</span>
-            </div>
-          </div>
+                <h3>{language === 'pt' ? service.titlePt : service.titleEs}</h3>
+
+                <strong className="service-feature__subtitle">
+                  {language === 'pt' ? service.subtitlePt : service.subtitleEs}
+                </strong>
+
+                <p>{language === 'pt' ? service.descriptionPt : service.descriptionEs}</p>
+
+                <ul className="service-feature__features">
+                  {(language === 'pt' ? service.featuresPt : service.featuresEs).map((feature) => (
+                    <li key={feature}>
+                      <CheckCircle2 size={16} />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="service-feature__highlight">
+                  {language === 'pt' ? service.highlightPt : service.highlightEs}
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   )
 }
 
-export default Servicios
+export default Services
