@@ -10,7 +10,9 @@ function ExperienceGate() {
     if (!selectedService) {
       document.body.style.overflow = 'hidden'
     }
-    return () => { document.body.style.overflow = '' }
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [selectedService])
 
   if (selectedService) return null
@@ -23,21 +25,22 @@ function ExperienceGate() {
       <div className="experience-gate__modal">
         <div className="experience-gate__header">
           <div className="experience-gate__brand">
-            <div className="experience-gate__mascot experience-gate__mascot--cat">
-              <div className="experience-gate__cat">
-                <div className="experience-gate__cat-ear experience-gate__cat-ear--left"></div>
-                <div className="experience-gate__cat-ear experience-gate__cat-ear--right"></div>
-                <div className="experience-gate__cat-face">
-                  <div className="experience-gate__cat-eye"></div>
-                  <div className="experience-gate__cat-eye"></div>
-                  <div className="experience-gate__cat-whisker"></div>
-                  <div className="experience-gate__cat-whisker"></div>
-                  <div className="experience-gate__cat-nose"></div>
-                </div>
-                <div className="experience-gate__cat-collar"></div>
+            {/* NEBULOSA CÓSMICA - NOVA */}
+            <div className="experience-gate__mascot experience-gate__mascot--cosmic">
+              <div className="experience-gate__cosmic">
+                <div className="experience-gate__cosmic-core"></div>
+                <div className="experience-gate__cosmic-particle"></div>
+                <div className="experience-gate__cosmic-particle"></div>
+                <div className="experience-gate__cosmic-particle"></div>
+                <div className="experience-gate__cosmic-particle"></div>
+                <div className="experience-gate__cosmic-ring"></div>
+                <div className="experience-gate__cosmic-ring"></div>
               </div>
             </div>
-            <span>PabloG.Dev</span>
+            <div className="experience-gate__mascot-info">
+              <span className="experience-gate__mascot-name">Nova</span>
+              <span className="experience-gate__mascot-title">Força Cósmica</span>
+            </div>
           </div>
           <div className="experience-gate__steps">
             <div className={`experience-gate__step ${step === 1 ? 'active' : ''}`} />

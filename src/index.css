@@ -2266,8 +2266,8 @@ main {
 }
 
 /* =====================================================
-   EXPERIENCE GATE - TEMA ESCURO ORIGINAL
-   Mascote branco e dourado
+   EXPERIENCE GATE - NEBULOSA CÓSMICA "NOVA"
+   Conceito completamente diferente e futurista
 ===================================================== */
 
 .experience-gate {
@@ -2313,200 +2313,187 @@ main {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #ffffff;
-  font-weight: 600;
+}
+
+.experience-gate__mascot-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-gate__mascot-name {
   font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
-/* ========== GATO MÁGICO - Branco e Dourado ========== */
-.experience-gate__mascot {
-  width: 44px;
-  height: 44px;
+.experience-gate__mascot-title {
+  font-size: 0.7rem;
+  color: #c5a572;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ========== NEBULOSA CÓSMICA ========== */
+.experience-gate__mascot--cosmic {
+  width: 48px;
+  height: 48px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.experience-gate__cat {
+.experience-gate__mascot--cosmic:hover {
+  transform: scale(1.05);
+}
+
+.experience-gate__cosmic {
   position: relative;
   width: 100%;
   height: 100%;
-  animation: catFloat 3s ease-in-out infinite;
+  animation: cosmicFloat 4s ease-in-out infinite;
 }
 
-/* Orelhas */
-.experience-gate__cat-ear {
+/* Núcleo da nebulosa */
+.experience-gate__cosmic-core {
   position: absolute;
-  width: 14px;
-  height: 16px;
-  background: linear-gradient(135deg, #ffffff, #f5f5f5);
-  top: -6px;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.experience-gate__cat-ear--left {
-  left: 6px;
-  transform: rotate(-10deg);
-}
-
-.experience-gate__cat-ear--right {
-  right: 6px;
-  transform: rotate(10deg);
-}
-
-/* Rosto */
-.experience-gate__cat-face {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, #ffffff, #fafafa);
-  border-radius: 50%;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle, #c5a572, #e2b87a);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(197, 165, 114, 0.8);
+  animation: corePulse 2s ease-in-out infinite;
 }
 
-/* Olhos - Dourados */
-.experience-gate__cat-eye {
+/* Partículas flutuantes */
+.experience-gate__cosmic-particle {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 3px;
+  height: 3px;
   background: #c5a572;
   border-radius: 50%;
-  top: 12px;
-  box-shadow: 0 0 4px rgba(197, 165, 114, 0.6);
-  animation: eyeGlow 2s ease-in-out infinite;
+  opacity: 0.6;
+  animation: particleFloat 3s ease-in-out infinite;
 }
 
-.experience-gate__cat-eye:first-of-type {
-  left: 8px;
-}
-
-.experience-gate__cat-eye:last-of-type {
-  right: 8px;
-}
-
-/* Bigodes - Dourados */
-.experience-gate__cat-whisker {
-  position: absolute;
-  width: 12px;
-  height: 1.5px;
-  background: #c5a572;
-  top: 18px;
-  animation: whiskerTwitch 2s ease-in-out infinite;
-}
-
-.experience-gate__cat-whisker:first-of-type {
-  left: -8px;
-  transform: rotate(-15deg);
-}
-
-.experience-gate__cat-whisker:last-of-type {
-  right: -8px;
-  transform: rotate(15deg);
-  animation: whiskerTwitchRight 2s ease-in-out infinite;
-}
-
-/* Nariz - Dourado */
-.experience-gate__cat-nose {
-  position: absolute;
+.experience-gate__cosmic-particle:nth-child(2) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
   width: 4px;
   height: 4px;
-  background: #c5a572;
-  border-radius: 50%;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 0 4px rgba(197, 165, 114, 0.4);
 }
 
-/* Coleira - Dourada */
-.experience-gate__cat-collar {
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
+.experience-gate__cosmic-particle:nth-child(3) {
+  top: 70%;
+  left: 80%;
+  animation-delay: 0.5s;
+  width: 2px;
+  height: 2px;
+}
+
+.experience-gate__cosmic-particle:nth-child(4) {
+  top: 80%;
+  left: 15%;
+  animation-delay: 1s;
+  width: 3px;
   height: 3px;
-  background: linear-gradient(90deg, #c5a572, #e2b87a);
-  border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Animações */
-@keyframes catFloat {
-  0%, 100% { 
-    transform: translateY(0px) rotate(0deg); 
-  }
-  50% { 
-    transform: translateY(-3px) rotate(2deg); 
-  }
+.experience-gate__cosmic-particle:nth-child(5) {
+  top: 30%;
+  left: 85%;
+  animation-delay: 1.5s;
+  width: 5px;
+  height: 5px;
 }
 
-@keyframes eyeGlow {
-  0%, 100% { 
-    opacity: 0.7; 
-    box-shadow: 0 0 4px rgba(197, 165, 114, 0.6);
-  }
-  50% { 
-    opacity: 1; 
-    box-shadow: 0 0 8px rgba(197, 165, 114, 1);
-  }
+/* Anéis orbitais */
+.experience-gate__cosmic-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(197, 165, 114, 0.4);
+  animation: ringRotate 6s linear infinite;
 }
 
-@keyframes whiskerTwitch {
-  0%, 100% { 
-    transform: rotate(-15deg);
-    opacity: 0.8;
+.experience-gate__cosmic-ring:first-of-type {
+  width: 32px;
+  height: 32px;
+  animation-duration: 8s;
+  border-color: rgba(197, 165, 114, 0.3);
+}
+
+.experience-gate__cosmic-ring:last-of-type {
+  width: 42px;
+  height: 42px;
+  animation-duration: 12s;
+  animation-direction: reverse;
+  border-color: rgba(197, 165, 114, 0.2);
+}
+
+/* ========== ANIMAÇÕES ========== */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
   }
-  50% { 
-    transform: rotate(-10deg);
+  to {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes whiskerTwitchRight {
-  0%, 100% { 
-    transform: rotate(15deg);
-    opacity: 0.8;
-  }
-  50% { 
-    transform: rotate(10deg);
-    opacity: 1;
-  }
-}
-
-/* Hover effect */
-.experience-gate__mascot:hover .experience-gate__cat {
-  animation: catWave 0.5s ease-in-out;
-}
-
-@keyframes catWave {
+@keyframes cosmicFloat {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
   25% {
-    transform: translateY(-5px) rotate(-5deg);
+    transform: translateY(-3px) rotate(2deg);
   }
   75% {
-    transform: translateY(-2px) rotate(5deg);
+    transform: translateY(2px) rotate(-2deg);
   }
 }
 
-.experience-gate__mascot:hover .experience-gate__cat-eye {
-  animation: catBlink 0.3s ease-in-out;
-}
-
-@keyframes catBlink {
+@keyframes corePulse {
   0%, 100% {
-    transform: scaleY(1);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+    box-shadow: 0 0 12px rgba(197, 165, 114, 0.8);
   }
   50% {
-    transform: scaleY(0.1);
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(197, 165, 114, 1);
   }
 }
 
-/* Steps */
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(4px, -6px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes ringRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ========== ESTILOS DO MODAL ========== */
 .experience-gate__steps {
   display: flex;
   gap: 6px;
@@ -2526,7 +2513,6 @@ main {
   box-shadow: 0 0 8px rgba(197, 165, 114, 0.3);
 }
 
-/* Content */
 .experience-gate__content {
   padding: 32px 24px;
 }
@@ -2633,17 +2619,6 @@ main {
   transform: translateX(-2px);
 }
 
-@keyframes modalIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 /* Responsive */
 @media (max-width: 640px) {
   .experience-gate {
@@ -2671,9 +2646,17 @@ main {
     padding: 14px 18px;
   }
   
-  .experience-gate__mascot {
-    width: 38px;
-    height: 38px;
+  .experience-gate__mascot--cosmic {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .experience-gate__mascot-name {
+    font-size: 0.85rem;
+  }
+  
+  .experience-gate__mascot-title {
+    font-size: 0.65rem;
   }
 }
 
@@ -2706,4 +2689,391 @@ main {
     right: 16px;
     bottom: 16px;
   }
+}
+/* =====================================================
+   WHATSAPP ASSISTANT - COM ANIMAÇÕES DA NOVA
+   Ícone cósmico com partículas flutuantes igual ao ExperienceGate
+===================================================== */
+
+/* BOTÃO EXTERNO - MANTIDO COMO VOCÊ DEFINIU */
+.wa-assistant-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1200;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #d4b06a;
+  color: #0a051e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0px 5px rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.wa-assistant-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(212, 176, 106, 0.4);
+}
+
+/* MODAL COM ANIMAÇÕES DA NOVA */
+.wa-assistant {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  z-index: 1199;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(8, 6, 20, 0.98);
+  border: 1px solid rgba(197, 165, 114, 0.25);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: all 0.3s ease;
+}
+
+.wa-assistant--open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.wa-assistant__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(197, 165, 114, 0.15);
+  background: linear-gradient(135deg, rgba(197, 165, 114, 0.08), rgba(3, 0, 20, 0.4));
+}
+
+.wa-assistant__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wa-assistant__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(197, 165, 114, 0.12);
+  border: 1px solid rgba(197, 165, 114, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.wa-assistant__icon:hover {
+  transform: scale(1.02);
+}
+
+/* Ícone da Nova - Nebulosa Cósmica com partículas (igual ao ExperienceGate) */
+.nova-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  animation: cosmicFloat 3s ease-in-out infinite;
+}
+
+.nova-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #c5a572, #e2b87a);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(197, 165, 114, 0.8);
+  animation: corePulse 2s ease-in-out infinite;
+}
+
+.nova-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(197, 165, 114, 0.5);
+  border-radius: 50%;
+  animation: ringRotate 6s linear infinite;
+}
+
+/* Partículas flutuantes */
+.nova-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #c5a572;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: particleFloat 3s ease-in-out infinite;
+}
+
+.nova-particle:nth-child(3) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+  width: 2px;
+  height: 2px;
+}
+
+.nova-particle:nth-child(4) {
+  top: 70%;
+  left: 80%;
+  animation-delay: 0.5s;
+  width: 2px;
+  height: 2px;
+}
+
+.nova-particle:nth-child(5) {
+  top: 80%;
+  left: 15%;
+  animation-delay: 1s;
+  width: 3px;
+  height: 3px;
+}
+
+/* Animações (mesmas do ExperienceGate) */
+@keyframes cosmicFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(2deg);
+  }
+}
+
+@keyframes corePulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+    box-shadow: 0 0 12px rgba(197, 165, 114, 0.8);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(197, 165, 114, 1);
+  }
+}
+
+@keyframes ringRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(3px, -4px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.wa-assistant__brand strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.wa-assistant__brand span {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
+}
+
+.wa-assistant__close {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.wa-assistant__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.wa-assistant__body {
+  padding: 20px;
+}
+
+.wa-assistant__message {
+  margin-bottom: 16px;
+}
+
+.wa-assistant__message p {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(197, 165, 114, 0.06);
+  border-left: 3px solid #c5a572;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wa-assistant__options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wa-assistant__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: rgba(197, 165, 114, 0.04);
+  border: 1px solid rgba(197, 165, 114, 0.12);
+  color: #fff;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.wa-assistant__option:hover {
+  background: rgba(197, 165, 114, 0.1);
+  border-color: rgba(197, 165, 114, 0.4);
+  transform: translateX(4px);
+}
+
+.wa-assistant__option-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wa-assistant__option-text strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.wa-assistant__option-text span {
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.wa-assistant__option svg {
+  color: rgba(197, 165, 114, 0.6);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.wa-assistant__option:hover svg {
+  transform: translateX(4px);
+  color: #c5a572;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .wa-assistant-button {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .wa-assistant {
+    right: 16px;
+    bottom: 80px;
+    width: calc(100vw - 32px);
+    border-radius: 24px;
+  }
+  
+  .wa-assistant__header {
+    padding: 14px 16px;
+  }
+  
+  .wa-assistant__body {
+    padding: 16px;
+  }
+  
+  .wa-assistant__option {
+    padding: 12px 14px;
+  }
+  
+  .wa-assistant__icon {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .nova-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .nova-ring {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 0, 20, 0.45);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 998;
+}
+
+.mobile-menu-backdrop--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 76px;
+  left: 16px;
+  right: 16px;
+  z-index: 999;
+  border-radius: 20px;
+  overflow: hidden;
 }
