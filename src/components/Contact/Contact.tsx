@@ -1,5 +1,6 @@
 import { useSiteExperience } from '../context/SiteExperienceContext'
 import { buildWhatsappMessage } from '../utils/buildWhatsappMessage'
+import { MessageCircle, Mail, TrendingUp, ArrowRight } from 'lucide-react'
 
 function Contact() {
   const { language, selectedService } = useSiteExperience()
@@ -44,7 +45,9 @@ function Contact() {
                 rel="noreferrer"
                 className="contact__method contact__method--whatsapp"
               >
-                <div className="contact__method-icon">💬</div>
+                <div className="contact__method-icon">
+                  <MessageCircle size={24} />
+                </div>
                 <div>
                   <strong>WhatsApp</strong>
                   <span>
@@ -53,25 +56,33 @@ function Contact() {
                       : 'Hablar directamente conmigo'}
                   </span>
                 </div>
-                <div className="contact__method-arrow">→</div>
+                <div className="contact__method-arrow">
+                  <ArrowRight size={18} />
+                </div>
               </a>
 
               <a
                 href="mailto:pgdevsoftware@gmail.com"
                 className="contact__method contact__method--email"
               >
-                <div className="contact__method-icon">✉</div>
+                <div className="contact__method-icon">
+                  <Mail size={24} />
+                </div>
                 <div>
                   <strong>Email</strong>
                   <span>pgdevsoftware@gmail.com</span>
                 </div>
-                <div className="contact__method-arrow">→</div>
+                <div className="contact__method-arrow">
+                  <ArrowRight size={18} />
+                </div>
               </a>
             </div>
           </div>
 
           <div className="contact__card">
-            <div className="contact__card-icon">⚡</div>
+            <div className="contact__card-icon">
+  <TrendingUp size={32} />
+</div>
             <h3>
               {language === 'pt'
                 ? 'Soluções sob medida para o seu negócio'
@@ -82,6 +93,10 @@ function Contact() {
                 ? 'Sites, sistemas e automações pensados para gerar resultado real.'
                 : 'Sitios, sistemas y automatizaciones pensados para generar resultados reales.'}
             </p>
+            <a href={whatsappLink} target="_blank" rel="noreferrer" className="contact__card-btn">
+              {language === 'pt' ? 'Iniciar conversa' : 'Iniciar conversación'}
+              <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </div>

@@ -844,6 +844,7 @@ main {
   }
 }
 
+/* SERVIÇOS - VISUAL PROFISSIONAL */
 .services {
   padding: 100px 0;
   background: var(--bg-primary);
@@ -1818,11 +1819,23 @@ main {
 }
 
 /* --------------------------------------------
-   10. CONTATO - VISUAL MELHORADO
+   10. CONTATO - ÍCONES SVG COM CORES ESPECÍFICAS
 -------------------------------------------- */
 .contact {
   padding: 100px 0;
   background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(197, 165, 114, 0.02) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .contact__wrapper {
@@ -1838,7 +1851,9 @@ main {
 }
 
 .contact__badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--accent);
@@ -1898,41 +1913,83 @@ main {
   border: 1px solid var(--border-light);
   border-radius: 20px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
+.contact__method::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.contact__method:hover::before {
+  transform: translateX(100%);
+}
+
+/* WhatsApp - Verde característico */
 .contact__method--whatsapp:hover {
   transform: translateX(8px);
   border-color: #25D366;
   background: rgba(37, 211, 102, 0.05);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.15);
 }
 
-.contact__method--email:hover {
-  transform: translateX(8px);
-  border-color: var(--accent);
-  background: rgba(197, 165, 114, 0.05);
-}
-
-.contact__method-icon {
-  width: 52px;
-  height: 52px;
-  background: rgba(197, 165, 114, 0.1);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  transition: all 0.3s ease;
+.contact__method--whatsapp .contact__method-icon {
+  background: rgba(37, 211, 102, 0.1);
+  color: #25D366;
 }
 
 .contact__method--whatsapp:hover .contact__method-icon {
   background: #25D366;
   color: #1a1206;
+  transform: scale(1.05);
+}
+
+/* Email - Dourado/accent */
+.contact__method--email:hover {
+  transform: translateX(8px);
+  border-color: var(--accent);
+  background: rgba(197, 165, 114, 0.05);
+  box-shadow: 0 8px 20px rgba(197, 165, 114, 0.15);
+}
+
+.contact__method--email .contact__method-icon {
+  background: rgba(197, 165, 114, 0.1);
+  color: var(--accent);
 }
 
 .contact__method--email:hover .contact__method-icon {
   background: var(--accent);
   color: #1a1206;
+  transform: scale(1.05);
+}
+
+.contact__method-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact__method-icon svg {
+  transition: all 0.3s ease;
+}
+
+.contact__method:hover .contact__method-icon svg {
+  transform: scale(1.05);
 }
 
 .contact__method div {
@@ -1956,6 +2013,8 @@ main {
   color: var(--accent);
   opacity: 0.5;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .contact__method:hover .contact__method-arrow {
@@ -1970,13 +2029,32 @@ main {
   border-radius: 28px;
   padding: 48px 32px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.contact__card:hover::before {
+  transform: translateX(100%);
 }
 
 .contact__card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
   background: linear-gradient(135deg, rgba(197, 165, 114, 0.08), rgba(197, 165, 114, 0.03));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .contact__card-icon {
@@ -1995,7 +2073,15 @@ main {
 .contact__card:hover .contact__card-icon {
   background: var(--accent);
   color: #1a1206;
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(5deg);
+}
+
+.contact__card-icon svg {
+  transition: all 0.3s ease;
+}
+
+.contact__card:hover .contact__card-icon svg {
+  transform: scale(1.1);
 }
 
 .contact__card h3 {
@@ -2024,12 +2110,23 @@ main {
   font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.contact__card-btn svg {
+  transition: transform 0.3s ease;
 }
 
 .contact__card-btn:hover {
   gap: 14px;
   transform: translateY(-2px);
   background: var(--accent-light);
+  box-shadow: 0 8px 20px rgba(197, 165, 114, 0.3);
+}
+
+.contact__card-btn:hover svg {
+  transform: translateX(4px);
 }
 
 /* Responsividade */
@@ -2119,6 +2216,11 @@ main {
     height: 60px;
   }
   
+  .contact__card-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  
   .contact__card h3 {
     font-size: 1.2rem;
   }
@@ -2151,6 +2253,36 @@ main {
   .contact__method-arrow {
     display: none;
   }
+  
+  .contact__method-icon {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .contact__method-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .contact {
+    padding: 70px 0;
+  }
+  
+  .contact__wrapper {
+    gap: 40px;
+  }
+  
+  .contact__method {
+    padding: 14px 20px;
+  }
+  
+  .contact__method-icon {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 /* --------------------------------------------
@@ -2178,73 +2310,6 @@ main {
 
 .footer__content a:hover {
   color: var(--accent-light);
-}
-
-/* --------------------------------------------
-   WHATSAPP FLOAT
--------------------------------------------- */
-.whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  background: #25D366;
-  color: #1a1206;
-  border-radius: 60px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-  transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-4px);
-  background: #20bd59;
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-  gap: 12px;
-}
-
-.whatsapp-float svg {
-  transition: transform 0.2s ease;
-}
-
-.whatsapp-float:hover svg {
-  transform: scale(1.05);
-}
-
-/* Responsividade */
-@media (max-width: 640px) {
-  .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-  }
-  
-  .whatsapp-float span {
-    display: none;
-  }
-  
-  .whatsapp-float svg {
-    margin: 0;
-  }
-  
-  .whatsapp-float {
-    padding: 14px;
-    border-radius: 50%;
-  }
-}
-
-@media (max-width: 480px) {
-  .whatsapp-float {
-    bottom: 16px;
-    right: 16px;
-    padding: 12px;
-  }
 }
 
 /* --------------------------------------------
