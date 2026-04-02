@@ -39,7 +39,7 @@ function ExperienceGate() {
             </div>
             <div className="experience-gate__mascot-info">
               <span className="experience-gate__mascot-name">Nova</span>
-              <span className="experience-gate__mascot-title">Força Cósmica</span>
+              <span className="experience-gate__mascot-title">Assistente IA</span>
             </div>
           </div>
           <div className="experience-gate__steps">
