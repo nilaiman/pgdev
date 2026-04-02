@@ -2691,11 +2691,11 @@ main {
   }
 }
 /* =====================================================
-   WHATSAPP ASSISTANT - COM ANIMAÇÕES DA NOVA
-   Ícone cósmico com partículas flutuantes igual ao ExperienceGate
+   WHATSAPP ASSISTANT - NOVA PREMIUM
+   Com animações suaves, pulse e indicador de progresso
 ===================================================== */
 
-/* BOTÃO EXTERNO - MANTIDO COMO VOCÊ DEFINIU */
+/* BOTÃO EXTERNO COM PULSE */
 .wa-assistant-button {
   position: fixed;
   right: 20px;
@@ -2709,18 +2709,29 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0px 5px rgb(255, 255, 255);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   cursor: pointer;
   border: none;
+  animation: subtlePulse 2s ease-in-out infinite;
 }
 
 .wa-assistant-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(212, 176, 106, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(212, 176, 106, 0.5);
+  animation: none;
 }
 
-/* MODAL COM ANIMAÇÕES DA NOVA */
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(212, 176, 106, 0.5);
+  }
+}
+
+/* MODAL */
 .wa-assistant {
   position: fixed;
   right: 20px;
@@ -2731,13 +2742,13 @@ main {
   border-radius: 28px;
   overflow: hidden;
   background: rgba(8, 6, 20, 0.98);
-  border: 1px solid rgba(197, 165, 114, 0.25);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(197, 165, 114, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(20px);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(12px);
-  transition: all 0.3s ease;
+  transform: translateY(16px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wa-assistant--open {
@@ -2746,14 +2757,15 @@ main {
   transform: translateY(0);
 }
 
+/* HEADER */
 .wa-assistant__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 18px 20px;
-  border-bottom: 1px solid rgba(197, 165, 114, 0.15);
-  background: linear-gradient(135deg, rgba(197, 165, 114, 0.08), rgba(3, 0, 20, 0.4));
+  border-bottom: 1px solid rgba(197, 165, 114, 0.1);
+  background: rgba(3, 0, 20, 0.3);
 }
 
 .wa-assistant__brand {
@@ -2763,22 +2775,44 @@ main {
 }
 
 .wa-assistant__icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(197, 165, 114, 0.12);
-  border: 1px solid rgba(197, 165, 114, 0.25);
-  transition: transform 0.2s ease;
+  background: rgba(197, 165, 114, 0.1);
+  border: 1px solid rgba(197, 165, 114, 0.2);
+  transition: all 0.2s ease;
 }
 
 .wa-assistant__icon:hover {
   transform: scale(1.02);
+  border-color: rgba(197, 165, 114, 0.4);
 }
 
-/* Ícone da Nova - Nebulosa Cósmica com partículas (igual ao ExperienceGate) */
+/* INDICADOR DE PROGRESSO */
+.wa-assistant__steps {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.wa-assistant__steps span {
+  width: 24px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.wa-assistant__steps span.active {
+  background: #c5a572;
+  width: 32px;
+  box-shadow: 0 0 8px rgba(197, 165, 114, 0.3);
+}
+
+/* Ícone da Nova */
 .nova-icon {
   position: relative;
   width: 24px;
@@ -2795,7 +2829,7 @@ main {
   height: 8px;
   background: radial-gradient(circle, #c5a572, #e2b87a);
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(197, 165, 114, 0.8);
+  box-shadow: 0 0 12px rgba(197, 165, 114, 0.6);
   animation: corePulse 2s ease-in-out infinite;
 }
 
@@ -2811,81 +2845,65 @@ main {
   animation: ringRotate 6s linear infinite;
 }
 
-/* Partículas flutuantes */
 .nova-particle {
   position: absolute;
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
   background: #c5a572;
   border-radius: 50%;
-  opacity: 0.6;
+  opacity: 0.5;
   animation: particleFloat 3s ease-in-out infinite;
 }
 
 .nova-particle:nth-child(3) {
-  top: 20%;
-  left: 20%;
+  top: 15%;
+  left: 15%;
   animation-delay: 0s;
-  width: 2px;
-  height: 2px;
 }
 
 .nova-particle:nth-child(4) {
-  top: 70%;
-  left: 80%;
+  top: 75%;
+  left: 85%;
   animation-delay: 0.5s;
-  width: 2px;
-  height: 2px;
 }
 
 .nova-particle:nth-child(5) {
-  top: 80%;
-  left: 15%;
+  top: 85%;
+  left: 10%;
   animation-delay: 1s;
-  width: 3px;
-  height: 3px;
 }
 
-/* Animações (mesmas do ExperienceGate) */
 @keyframes cosmicFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-2px) rotate(2deg);
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-2px) rotate(2deg); }
 }
 
 @keyframes corePulse {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);
-    opacity: 0.8;
-    box-shadow: 0 0 12px rgba(197, 165, 114, 0.8);
+    opacity: 0.7;
+    box-shadow: 0 0 8px rgba(197, 165, 114, 0.6);
   }
   50% {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 1;
-    box-shadow: 0 0 20px rgba(197, 165, 114, 1);
+    box-shadow: 0 0 16px rgba(197, 165, 114, 1);
   }
 }
 
 @keyframes ringRotate {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @keyframes particleFloat {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.4;
+    transform: translate(0, 0);
+    opacity: 0.3;
   }
   50% {
-    transform: translate(3px, -4px) scale(1.2);
-    opacity: 1;
+    transform: translate(3px, -4px);
+    opacity: 0.8;
   }
 }
 
@@ -2900,8 +2918,8 @@ main {
 
 .wa-assistant__brand span {
   display: block;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
   margin-top: 2px;
 }
 
@@ -2920,34 +2938,84 @@ main {
 }
 
 .wa-assistant__close:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
   transform: rotate(90deg);
 }
 
+/* BODY */
 .wa-assistant__body {
   padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(197, 165, 114, 0.3) transparent;
 }
 
+.wa-assistant__body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.wa-assistant__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wa-assistant__body::-webkit-scrollbar-thumb {
+  background: rgba(197, 165, 114, 0.3);
+  border-radius: 4px;
+}
+
+/* BACK BUTTON */
+.wa-assistant__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 6px 0;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wa-assistant__back:focus-visible {
+  outline: 2px solid #c5a572;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.wa-assistant__back:hover {
+  color: #c5a572;
+  transform: translateX(-4px);
+}
+
+/* MESSAGE */
 .wa-assistant__message {
   margin-bottom: 16px;
+  animation: slideUp 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
 
 .wa-assistant__message p {
-  padding: 14px 16px;
+  padding: 12px 16px;
   border-radius: 18px;
-  background: rgba(197, 165, 114, 0.06);
+  background: rgba(197, 165, 114, 0.05);
   border-left: 3px solid #c5a572;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   margin: 0;
 }
 
+/* OPTIONS */
 .wa-assistant__options {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  animation: slideUp 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
 
 .wa-assistant__option {
@@ -2958,56 +3026,121 @@ main {
   width: 100%;
   padding: 14px 16px;
   border-radius: 20px;
-  background: rgba(197, 165, 114, 0.04);
-  border: 1px solid rgba(197, 165, 114, 0.12);
+  background: rgba(197, 165, 114, 0.03);
+  border: 1px solid rgba(197, 165, 114, 0.1);
   color: #fff;
   transition: all 0.25s ease;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.wa-assistant__option:nth-child(1) { animation-delay: 0s; }
+.wa-assistant__option:nth-child(2) { animation-delay: 0.05s; }
+.wa-assistant__option:nth-child(3) { animation-delay: 0.1s; }
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito shine no hover */
+.wa-assistant__option::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(197, 165, 114, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.wa-assistant__option:hover::after {
+  transform: translateX(100%);
 }
 
 .wa-assistant__option:hover {
-  background: rgba(197, 165, 114, 0.1);
-  border-color: rgba(197, 165, 114, 0.4);
+  background: rgba(197, 165, 114, 0.08);
+  border-color: rgba(197, 165, 114, 0.35);
   transform: translateX(4px);
+}
+
+.wa-assistant__option--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.wa-assistant__option:focus-visible {
+  outline: 2px solid #c5a572;
+  outline-offset: 2px;
+  border-radius: 20px;
+}
+
+.wa-assistant__option-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(197, 165, 114, 0.08);
+  color: #c5a572;
+  border: 1px solid rgba(197, 165, 114, 0.15);
+  transition: all 0.2s ease;
+}
+
+.wa-assistant__option:hover .wa-assistant__option-icon {
+  background: rgba(197, 165, 114, 0.15);
+  transform: scale(1.02);
 }
 
 .wa-assistant__option-text {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .wa-assistant__option-text strong {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: #fff;
+  line-height: 1.3;
 }
 
 .wa-assistant__option-text span {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.wa-assistant__option svg {
-  color: rgba(197, 165, 114, 0.6);
+.wa-assistant__option svg:last-child {
+  color: rgba(197, 165, 114, 0.5);
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.wa-assistant__option:hover svg {
+.wa-assistant__option:hover svg:last-child {
   transform: translateX(4px);
   color: #c5a572;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 640px) {
   .wa-assistant-button {
     right: 16px;
     bottom: 16px;
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
   }
 
   .wa-assistant {
@@ -3023,10 +3156,7 @@ main {
   
   .wa-assistant__body {
     padding: 16px;
-  }
-  
-  .wa-assistant__option {
-    padding: 12px 14px;
+    max-height: 450px;
   }
   
   .wa-assistant__icon {
@@ -3043,92 +3173,30 @@ main {
     width: 16px;
     height: 16px;
   }
-}
-.wa-assistant__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: none;
-  padding: 0;
-  margin-bottom: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.wa-assistant__back:hover {
-  color: #c5a572;
-  transform: translateX(-2px);
-}
-
-.wa-assistant__option-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(197, 165, 114, 0.08);
-  color: #c5a572;
-  border: 1px solid rgba(197, 165, 114, 0.16);
-}
-
-.wa-assistant__typing {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 14px 16px;
-  border-radius: 18px;
-  background: rgba(197, 165, 114, 0.06);
-  border-left: 3px solid #c5a572;
-  margin-bottom: 16px;
-}
-
-.wa-assistant__typing span {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #c5a572;
-  opacity: 0.5;
-  animation: waTyping 1.2s infinite ease-in-out;
-}
-
-.wa-assistant__typing span:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.wa-assistant__typing span:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.wa-assistant__message--fade,
-.wa-assistant__options--fade {
-  animation: waFadeUp 0.35s ease;
-}
-
-@keyframes waTyping {
-  0%, 80%, 100% {
-    transform: scale(0.8);
-    opacity: 0.35;
+  
+  .wa-assistant__steps span {
+    width: 20px;
   }
-  40% {
-    transform: scale(1);
-    opacity: 1;
+  
+  .wa-assistant__steps span.active {
+    width: 28px;
   }
-}
-
-@keyframes waFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
+  
+  .wa-assistant__option {
+    padding: 12px 14px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .wa-assistant__option-icon {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .wa-assistant__option-text strong {
+    font-size: 0.85rem;
+  }
+  
+  .wa-assistant__option-text span {
+    font-size: 0.7rem;
   }
 }
 

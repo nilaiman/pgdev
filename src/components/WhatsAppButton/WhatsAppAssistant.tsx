@@ -17,9 +17,7 @@ function WhatsAppAssistant() {
 
   const [open, setOpen] = useState(false)
   const [step, setStep] = useState<AssistantStep>('intro')
-  const [typing, setTyping] = useState(false)
-  const [showMessage, setShowMessage] = useState(false)
-  const [showOptions, setShowOptions] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const whatsappNumber = '5511961111894'
   const isPt = language === 'pt'
@@ -30,36 +28,16 @@ function WhatsAppAssistant() {
     return 'start'
   }, [selectedService])
 
-  useEffect(() => {
-    if (!open) return
-
-    setTyping(true)
-    setShowMessage(false)
-    setShowOptions(false)
-
-    const typingTimer = setTimeout(() => {
-      setTyping(false)
-      setShowMessage(true)
-    }, 650)
-
-    const optionsTimer = setTimeout(() => {
-      setShowOptions(true)
-    }, 1000)
-
-    return () => {
-      clearTimeout(typingTimer)
-      clearTimeout(optionsTimer)
-    }
-  }, [open, step])
-
   const handleOpen = () => {
     setStep(initialStep === 'website' || initialStep === 'system' ? initialStep : 'intro')
     setOpen(true)
   }
 
   const openWhatsApp = (message: string) => {
+    setIsLoading(true)
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank', 'noopener,noreferrer')
+    setTimeout(() => setIsLoading(false), 500)
   }
 
   const websiteOptions = isPt
@@ -218,6 +196,12 @@ function WhatsAppAssistant() {
       ? 'Sem problema. Escolha uma mensagem pronta e eu te ajudo a encontrar a melhor solução.'
       : 'No hay problema. Elige un mensaje listo y te ayudo a encontrar la mejor solución.'
 
+  const getStepNumber = () => {
+    if (step === 'intro') return 1
+    if (step === 'start') return 2
+    return 3
+  }
+
   return (
     <>
       <button
@@ -254,6 +238,12 @@ function WhatsAppAssistant() {
             </div>
           </div>
 
+          <div className="wa-assistant__steps">
+            <span className={getStepNumber() >= 1 ? 'active' : ''} />
+            <span className={getStepNumber() >= 2 ? 'active' : ''} />
+            <span className={getStepNumber() >= 3 ? 'active' : ''} />
+          </div>
+
           <button
             type="button"
             className="wa-assistant__close"
@@ -276,34 +266,26 @@ function WhatsAppAssistant() {
             </button>
           )}
 
-          {typing && (
-            <div className="wa-assistant__typing">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          )}
-
-          {showMessage && step === 'intro' && (
-            <div className="wa-assistant__message wa-assistant__message--fade">
+          {step === 'intro' && (
+            <div className="wa-assistant__message">
               <p>{introMessage}</p>
             </div>
           )}
 
-          {showMessage && step === 'start' && (
-            <div className="wa-assistant__message wa-assistant__message--fade">
+          {step === 'start' && (
+            <div className="wa-assistant__message">
               <p>{startMessage}</p>
             </div>
           )}
 
-          {showMessage && (step === 'website' || step === 'system' || step === 'unsure') && (
-            <div className="wa-assistant__message wa-assistant__message--fade">
+          {(step === 'website' || step === 'system' || step === 'unsure') && (
+            <div className="wa-assistant__message">
               <p>{stepMessage}</p>
             </div>
           )}
 
-          {showOptions && step === 'intro' && (
-            <div className="wa-assistant__options wa-assistant__options--fade">
+          {step === 'intro' && (
+            <div className="wa-assistant__options">
               <button
                 type="button"
                 className="wa-assistant__option"
@@ -322,8 +304,8 @@ function WhatsAppAssistant() {
             </div>
           )}
 
-          {showOptions && step === 'start' && (
-            <div className="wa-assistant__options wa-assistant__options--fade">
+          {step === 'start' && (
+            <div className="wa-assistant__options">
               <button
                 type="button"
                 className="wa-assistant__option"
@@ -387,14 +369,16 @@ function WhatsAppAssistant() {
             </div>
           )}
 
-          {showOptions && (step === 'website' || step === 'system' || step === 'unsure') && (
-            <div className="wa-assistant__options wa-assistant__options--fade">
-              {currentOptions.map((option) => (
+          {(step === 'website' || step === 'system' || step === 'unsure') && (
+            <div className="wa-assistant__options">
+              {currentOptions.map((option, index) => (
                 <button
                   key={option.title}
                   type="button"
-                  className="wa-assistant__option"
+                  className={`wa-assistant__option ${isLoading ? 'wa-assistant__option--loading' : ''}`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
                   onClick={() => openWhatsApp(option.message)}
+                  disabled={isLoading}
                 >
                   <div className="wa-assistant__option-text">
                     <strong>{option.title}</strong>
