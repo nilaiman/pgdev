@@ -1,30 +1,49 @@
-import Header from './components/Header/Header'
-import Hero from './components/Hero/Hero'
-import Services from './components/Services/Services'
-import Projects from './components/Projects/Projects'
-import HowItWorks from './components/HowItWorks/HowItWorks'
-import About from './components/About/About'
-import Contact from './components/Contact/Contact'
-import Footer from './components/Footer/Footer'
-import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton'
-import ExperienceGate from './components/Hero/ExperienceGate'
+import { useEffect, useState } from 'react'
+
+import './new-site/styles/variables.css'
+import './new-site/styles/global.css'
+
+import Header from './new-site/components/Header/Header'
+import Hero from './new-site/components/Hero/Hero'
+import Services from './new-site/components/Services/Services'
+import Projects from './new-site/components/Projects/Projects'
+import About from './new-site/components/About/About'
+import Contact from './new-site/components/Contact/Contact'
+import Footer from './new-site/components/Footer/Footer'
+import ProjectGuide from './new-site/components/ProjectGuide/ProjectGuide'
+
+import type { Language } from './new-site/types'
+
+function getInitialLanguage(): Language {
+  const savedLanguage = localStorage.getItem('pgdev-language')
+
+  if (savedLanguage === 'pt' || savedLanguage === 'es') {
+    return savedLanguage
+  }
+
+  return 'pt'
+}
 
 function App() {
+  const [language, setLanguage] = useState<Language>(getInitialLanguage)
+
+  useEffect(() => {
+    localStorage.setItem('pgdev-language', language)
+    document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'es'
+  }, [language])
+
   return (
     <>
-      <ExperienceGate />
-
-      <Header />
+      <Header language={language} onChangeLanguage={setLanguage} />
       <main>
-        <Hero />
-        <Services />
-        <Projects />
-        <HowItWorks />
-        <About />
-        <Contact />
+        <Hero language={language} />
+        <Services language={language} />
+        <Projects language={language} />
+        <About language={language} />
+        <Contact language={language} />
       </main>
-      <Footer />
-      <WhatsAppButton />
+      <Footer language={language} />
+      <ProjectGuide language={language} />
     </>
   )
 }
