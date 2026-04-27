@@ -30,7 +30,7 @@
   box-shadow: 0 8px 30px rgba(254, 201, 15, 0.25);
 }
 
-/* Tooltip hover - usando ::before */
+/* Tooltip texto */
 .project-guide-float::before {
   content: 'Montar meu projeto →';
   position: absolute;
@@ -48,18 +48,10 @@
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 /* Seta do tooltip */
-.project-guide-float::before::before {
-  display: none;
-}
-
-/* Criando a seta separadamente */
-.project-guide-float {
-  position: relative;
-}
-
 .project-guide-float::after {
   content: '';
   position: absolute;
@@ -74,6 +66,7 @@
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .project-guide-float:hover::before {
@@ -84,14 +77,6 @@
 .project-guide-float:hover::after {
   opacity: 1;
   right: 64px;
-}
-
-/* Tooltip automático (aparece sozinho uma vez) */
-@keyframes showTooltip {
-  0% { opacity: 0; right: 64px; }
-  8% { opacity: 1; right: 70px; }
-  80% { opacity: 1; right: 70px; }
-  100% { opacity: 0; right: 64px; }
 }
 
 /* ============================================
@@ -307,13 +292,6 @@
 
   .project-guide-float:hover::after {
     right: 60px;
-  }
-
-  @keyframes showTooltip {
-    0% { opacity: 0; right: 62px; }
-    8% { opacity: 1; right: 66px; }
-    80% { opacity: 1; right: 66px; }
-    100% { opacity: 0; right: 62px; }
   }
 
   .project-guide__modal {
