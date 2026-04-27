@@ -223,6 +223,8 @@
   left: 0;
   right: 0;
   background: #000c24;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
 }
 
 .mobile-menu.open {
@@ -287,6 +289,7 @@
    RESPONSIVE
    ============================================ */
 
+/* Tablet e mobile - esconde nav e actions, mostra botões mobile */
 @media (max-width: 900px) {
   .nav,
   .actions {
@@ -302,6 +305,7 @@
   }
 }
 
+/* Mobile médio */
 @media (max-width: 640px) {
   .header-inner {
     padding: 0 24px;
@@ -314,6 +318,7 @@
 
   .mobile-menu {
     top: 64px;
+    max-height: calc(100vh - 64px);
   }
 
   .mobile-lang-header {
@@ -327,6 +332,7 @@
   }
 }
 
+/* Mobile pequeno */
 @media (max-width: 480px) {
   .header-inner {
     padding: 0 20px;
@@ -339,6 +345,7 @@
 
   .mobile-menu {
     top: 60px;
+    max-height: calc(100vh - 60px);
   }
 
   .mobile-lang-header {
@@ -349,5 +356,22 @@
   .mobile-lang-header-btn {
     padding: 2px 6px;
     font-size: 0.6rem;
+  }
+}
+
+/* Desktop pequeno */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .nav {
+    gap: 20px;
+  }
+  
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+  
+  .cta {
+    padding: 7px 16px;
+    font-size: 0.75rem;
   }
 }

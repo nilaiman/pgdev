@@ -38,6 +38,17 @@ export default function Header({ language, onChangeLanguage }: HeaderProps) {
   const closeMenu = () => setIsMenuOpen(false)
   const toggleMenu = () => setIsMenuOpen(prev => !prev)
 
+  // Fecha o menu ao redimensionar para mobile
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900 && isMenuOpen) {
+        setIsMenuOpen(false)
+      }
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [isMenuOpen])
+
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-inner">
