@@ -375,3 +375,38 @@
     font-size: 0.75rem;
   }
 }
+
+/* ============================================
+   iPhone PWA / Safari Add to Home Screen
+   ============================================ */
+
+@supports (padding-top: env(safe-area-inset-top)) {
+  .header {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .mobile-menu {
+    top: calc(72px + env(safe-area-inset-top));
+    max-height: calc(100vh - 72px - env(safe-area-inset-top));
+  }
+}
+
+/* Ajuste para mobile médio com PWA */
+@media (max-width: 640px) {
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .mobile-menu {
+      top: calc(64px + env(safe-area-inset-top));
+      max-height: calc(100vh - 64px - env(safe-area-inset-top));
+    }
+  }
+}
+
+/* Ajuste para mobile pequeno com PWA */
+@media (max-width: 480px) {
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .mobile-menu {
+      top: calc(60px + env(safe-area-inset-top));
+      max-height: calc(100vh - 60px - env(safe-area-inset-top));
+    }
+  }
+}
