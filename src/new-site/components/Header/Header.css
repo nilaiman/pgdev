@@ -29,11 +29,13 @@
   justify-content: space-between;
 }
 
-/* Brand */
+/* Brand com animação do traçado */
 .brand {
   text-decoration: none;
   flex-shrink: 0;
   transition: opacity 0.2s;
+  position: relative;
+  display: inline-block;
 }
 
 .brand:hover {
@@ -44,6 +46,49 @@
   height: 46px;
   width: auto;
   display: block;
+}
+
+/* Traçado animado embaixo da logo */
+.brand-underline {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fec90f;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.brand:hover .brand-underline {
+  width: 100%;
+}
+
+/* Animação contínua de encher e esvaziar */
+@keyframes underlinePulse {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+
+.brand-underline {
+  animation: underlinePulse 3s ease-in-out infinite;
+}
+
+/* Para quando passar o mouse, para a animação e mostra o traçado completo */
+.brand:hover .brand-underline {
+  animation: none;
+  width: 100%;
+  left: 0;
 }
 
 /* Nav */

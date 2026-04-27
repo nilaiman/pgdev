@@ -43,6 +43,7 @@ export default function Header({ language, onChangeLanguage }: HeaderProps) {
       <div className="header-inner">
         <a href="#inicio" className="brand" onClick={closeMenu}>
           <img src={logo} alt="PabloG.Dev" className="brand-logo" />
+          <div className="brand-underline"></div>
         </a>
 
         <nav className="nav">
