@@ -377,18 +377,45 @@
 }
 
 /* ============================================
-   iPhone PWA / Safari Add to Home Screen
+   iPhone PWA / Safari Add to Home Screen - CORREÇÃO TOTAL
    ============================================ */
 
+/* Ajuste para PWA no iPhone - header e hero não colam mais */
 @supports (padding-top: env(safe-area-inset-top)) {
   @media (max-width: 900px) {
     .header {
-      padding-top: calc(env(safe-area-inset-top) + 10px);
+      padding-top: env(safe-area-inset-top);
     }
-
+    
+    .header-inner {
+      height: calc(72px + env(safe-area-inset-top));
+    }
+    
     .mobile-menu {
-      top: calc(60px + env(safe-area-inset-top) + 10px);
-      max-height: calc(100vh - 60px - env(safe-area-inset-top) - 10px);
+      top: calc(72px + env(safe-area-inset-top));
+      max-height: calc(100vh - 72px - env(safe-area-inset-top));
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .header-inner {
+      height: calc(64px + env(safe-area-inset-top));
+    }
+    
+    .mobile-menu {
+      top: calc(64px + env(safe-area-inset-top));
+      max-height: calc(100vh - 64px - env(safe-area-inset-top));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-inner {
+      height: calc(60px + env(safe-area-inset-top));
+    }
+    
+    .mobile-menu {
+      top: calc(60px + env(safe-area-inset-top));
+      max-height: calc(100vh - 60px - env(safe-area-inset-top));
     }
   }
 }

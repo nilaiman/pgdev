@@ -340,3 +340,28 @@
     font-size: 0.8125rem;
   }
 }
+
+/* ============================================
+   CORREÇÃO PWA - iPhone
+   ============================================ */
+
+/* Ajuste hero para não ficar colado no header no PWA */
+@supports (padding-top: env(safe-area-inset-top)) {
+  @media (max-width: 900px) {
+    .hero {
+      padding-top: calc(120px + env(safe-area-inset-top));
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: calc(100px + env(safe-area-inset-top));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      padding-top: calc(90px + env(safe-area-inset-top));
+    }
+  }
+}
