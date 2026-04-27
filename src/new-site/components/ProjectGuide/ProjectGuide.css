@@ -30,9 +30,9 @@
   box-shadow: 0 8px 30px rgba(254, 201, 15, 0.25);
 }
 
-/* Tooltip hover */
-.project-guide-float::after {
-  content: 'Montar meu projeto ➞';
+/* Tooltip hover - usando ::before */
+.project-guide-float::before {
+  content: 'Montar meu projeto →';
   position: absolute;
   right: 64px;
   top: 50%;
@@ -50,10 +50,20 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-guide-float::after::after {
+/* Seta do tooltip */
+.project-guide-float::before::before {
+  display: none;
+}
+
+/* Criando a seta separadamente */
+.project-guide-float {
+  position: relative;
+}
+
+.project-guide-float::after {
   content: '';
   position: absolute;
-  right: -6px;
+  right: 58px;
   top: 50%;
   transform: translateY(-50%);
   width: 0;
@@ -61,33 +71,22 @@
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
   border-left: 6px solid #fec90f;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-guide-float:hover::after {
+.project-guide-float:hover::before {
   opacity: 1;
   right: 70px;
 }
 
-/* Tooltip automático */
-.project-guide-float::before {
-  content: 'Montar meu projeto ➞';
-  position: absolute;
+.project-guide-float:hover::after {
+  opacity: 1;
   right: 64px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #fec90f;
-  color: #000c24;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 8px 14px;
-  border-radius: 10px;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(254, 201, 15, 0.2);
-  opacity: 0;
-  pointer-events: none;
-  animation: showTooltip 5s ease forwards;
 }
 
+/* Tooltip automático (aparece sozinho uma vez) */
 @keyframes showTooltip {
   0% { opacity: 0; right: 64px; }
   8% { opacity: 1; right: 70px; }
@@ -294,9 +293,20 @@
     left: auto;
   }
 
-  .project-guide-float::after,
   .project-guide-float::before {
     right: 62px;
+  }
+
+  .project-guide-float::after {
+    right: 56px;
+  }
+
+  .project-guide-float:hover::before {
+    right: 66px;
+  }
+
+  .project-guide-float:hover::after {
+    right: 60px;
   }
 
   @keyframes showTooltip {
