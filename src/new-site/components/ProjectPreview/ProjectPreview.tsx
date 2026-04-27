@@ -53,9 +53,9 @@ function loadState(): SavedState {
   return {
     businessName: '',
     projectType: 'website',
-    primaryColor: '#3b82f6',
-    secondaryColor: '#ef4444',
-    accentColor: '#22c55e',
+    primaryColor: '#fec90f',
+    secondaryColor: '#000c24',
+    accentColor: '#3b82f6',
   }
 }
 
@@ -77,12 +77,10 @@ function ProjectPreview({ language }: Props) {
 
   const isPt = language === 'pt'
 
-  // Salvar no localStorage
   useEffect(() => {
     saveState({ businessName, projectType, primaryColor, secondaryColor, accentColor })
   }, [businessName, projectType, primaryColor, secondaryColor, accentColor])
 
-  // Fechar ao pressionar ESC
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape' && open) setOpen(false)
   }, [open])
@@ -92,7 +90,6 @@ function ProjectPreview({ language }: Props) {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [handleKeyDown])
 
-  // Travar rolagem do fundo
   useEffect(() => {
     const nav = document.querySelector('nav')
     const header = document.querySelector('header')
@@ -132,12 +129,11 @@ function ProjectPreview({ language }: Props) {
   }[projectType]
 
   const whatsappMessage = isPt
-    ? `Olá! Vi a simulação no site e quero um projeto para "${name}". Tipo: ${typeLabel}.`
-    : `¡Hola! Vi la simulación en el sitio y quiero un proyecto para "${name}". Tipo: ${typeLabel}.`
+    ? `Olá! Vi a simulação no site e quero um projeto para "${name}". Tipo: ${typeLabel}. Cores: ${primaryColor} / ${secondaryColor} / ${accentColor}`
+    : `¡Hola! Vi la simulación en el sitio y quiero un proyecto para "${name}". Tipo: ${typeLabel}. Colores: ${primaryColor} / ${secondaryColor} / ${accentColor}`
 
   const isDashboard = projectType === 'system'
 
-  // CSS custom properties para injetar no device
   const deviceStyle = {
     '--primary': primaryColor,
     '--secondary': secondaryColor,
@@ -218,7 +214,7 @@ function ProjectPreview({ language }: Props) {
                         className={projectType === 'system' ? 'is-active' : ''}
                         onClick={() => setProjectType('system')}
                       >
-                        Sistema
+                        {isPt ? 'Sistema' : 'Sistema'}
                       </button>
                     </div>
                   </div>
@@ -281,7 +277,6 @@ function ProjectPreview({ language }: Props) {
                   </div>
                 </div>
 
-                {/* DEVICE PREVIEW com cores dinâmicas */}
                 <div className="preview__device preview__device--personalizado" style={deviceStyle}>
                   <div className="preview__topbar">
                     <span></span>
@@ -289,12 +284,12 @@ function ProjectPreview({ language }: Props) {
                     <span></span>
                   </div>
 
-                  {/* ===== SISTEMA ===== */}
                   {isDashboard && (
                     <div className="preview-dashboard">
                       <div className="preview-dashboard__sidebar">
                         <div className="preview-dashboard__logo">{initials}</div>
                         <div className="preview-dashboard__nav-item active"></div>
+                        <div className="preview-dashboard__nav-item"></div>
                         <div className="preview-dashboard__nav-item"></div>
                         <div className="preview-dashboard__nav-item"></div>
                       </div>
@@ -318,20 +313,43 @@ function ProjectPreview({ language }: Props) {
                             <span>{isPt ? 'Pedidos' : 'Pedidos'}</span>
                           </div>
                           <div className="preview-dashboard__metric">
-                            <strong>98%</strong>
-                            <span>{isPt ? 'Controle' : 'Control'}</span>
+                            <strong>R$24K</strong>
+                            <span>{isPt ? 'Receita' : 'Ingresos'}</span>
                           </div>
                         </div>
                         <div className="preview-dashboard__chart">
-                          <div className="preview-dashboard__bar"></div>
-                          <div className="preview-dashboard__bar"></div>
-                          <div className="preview-dashboard__bar"></div>
+                          <div className="preview-dashboard__chart-header">
+                            <span>{isPt ? 'Vendas (últimos 30 dias)' : 'Ventas (últimos 30 días)'}</span>
+                            <span>↑ 23%</span>
+                          </div>
+                          <div className="preview-dashboard__chart-bars">
+                            <div className="preview-dashboard__chart-bar">
+                              <div className="preview-dashboard__chart-bar-fill"></div>
+                            </div>
+                            <div className="preview-dashboard__chart-bar">
+                              <div className="preview-dashboard__chart-bar-fill"></div>
+                            </div>
+                            <div className="preview-dashboard__chart-bar">
+                              <div className="preview-dashboard__chart-bar-fill"></div>
+                            </div>
+                            <div className="preview-dashboard__chart-bar">
+                              <div className="preview-dashboard__chart-bar-fill"></div>
+                            </div>
+                            <div className="preview-dashboard__chart-bar">
+                              <div className="preview-dashboard__chart-bar-fill"></div>
+                            </div>
+                            <div className="preview-dashboard__chart-bar">
+                              <div className="preview-dashboard__chart-bar-fill"></div>
+                            </div>
+                            <div className="preview-dashboard__chart-bar">
+                              <div className="preview-dashboard__chart-bar-fill"></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   )}
 
-                  {/* ===== SITE ===== */}
                   {projectType === 'website' && !isDashboard && (
                     <div className="preview-site">
                       <div className="preview-site__header">
@@ -389,7 +407,6 @@ function ProjectPreview({ language }: Props) {
                     </div>
                   )}
 
-                  {/* ===== LANDING ===== */}
                   {projectType === 'landing' && !isDashboard && (
                     <div className="preview-landing">
                       <div className="preview-landing__top">
@@ -453,7 +470,6 @@ function ProjectPreview({ language }: Props) {
                       </div>
                     </div>
                   )}
-
                 </div>
               </div>
             </div>
