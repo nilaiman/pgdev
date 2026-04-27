@@ -109,6 +109,30 @@ export const es = {
         results: ['Mensaje objetivo', 'Visual premium', 'CTA estratégico'],
         linkLabel: 'Ver proyecto',
       },
+      {
+        category: 'E-commerce',
+        title: 'Tienda virtual completa para vender más',
+        description:
+          'Plataforma de ventas online con gestión de productos, pagos y entregas integradas.',
+        results: ['Vitrina de productos', 'Checkout optimizado', 'Panel de gestión'],
+        linkLabel: 'Ver proyecto',
+      },
+      {
+        category: 'Dashboard',
+        title: 'Panel de control para toma de decisiones',
+        description:
+          'Dashboard con métricas, gráficos y reportes para seguir el rendimiento del negocio.',
+        results: ['Indicadores visuales', 'Reportes en tiempo real', 'Filtros personalizados'],
+        linkLabel: 'Ver detalles',
+      },
+      {
+        category: 'Portal web',
+        title: 'Portal con área de miembros y contenido exclusivo',
+        description:
+          'Estructura completa para portales de contenido con login, suscripciones y áreas restringidas.',
+        results: ['Área de miembros', 'Gestión de suscripciones', 'Contenido exclusivo'],
+        linkLabel: 'Ver proyecto',
+      },
     ],
   },
 

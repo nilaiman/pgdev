@@ -22,6 +22,22 @@ export default function Projects({ language }: ProjectsProps) {
   const content = language === 'pt' ? pt : es
   const [showAll, setShowAll] = useState(false)
 
+  const handleShowMore = () => {
+    const currentScrollY = window.scrollY
+    setShowAll(true)
+    setTimeout(() => {
+      window.scrollTo(0, currentScrollY)
+    }, 0)
+  }
+
+  const handleShowLess = () => {
+    const currentScrollY = window.scrollY
+    setShowAll(false)
+    setTimeout(() => {
+      window.scrollTo(0, currentScrollY)
+    }, 0)
+  }
+
   const visibleProjects = showAll 
     ? content.projects.items 
     : content.projects.items.slice(0, Math.min(3, projectImages.length))
@@ -49,13 +65,17 @@ export default function Projects({ language }: ProjectsProps) {
 
         {content.projects.items.length > 3 && (
           <div className="projects-more">
-            <button 
-              className="show-more-btn"
-              onClick={() => setShowAll(!showAll)}
-            >
-              {showAll ? 'Ver menos' : 'Ver mais projetos'}
-              <ChevronDown size={20} className={`arrow ${showAll ? 'rotate' : ''}`} />
-            </button>
+            {!showAll ? (
+              <button className="show-more-btn" onClick={handleShowMore}>
+                {language === 'pt' ? 'Ver mais projetos' : 'Ver más proyectos'}
+                <ChevronDown size={20} className="arrow" />
+              </button>
+            ) : (
+              <button className="show-more-btn" onClick={handleShowLess}>
+                {language === 'pt' ? 'Ver menos' : 'Ver menos'}
+                <ChevronDown size={20} className="arrow rotate" />
+              </button>
+            )}
           </div>
         )}
       </div>

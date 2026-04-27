@@ -72,60 +72,28 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 20px;
-  height: 20px;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 2;
-}
-
-.project-card::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  border-bottom: 2px solid #ffffff;
-  border-right: 2px solid #ffffff;
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 2;
-}
-
-.project-card:hover::before,
-.project-card:hover::after {
-  opacity: 1;
-}
-
 .project-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
+/* Overlay que aparece no hover */
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: #000c24;
+  background: linear-gradient(to top, rgba(0, 12, 36, 0.95) 0%, rgba(0, 12, 36, 0.85) 50%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .project-card:hover .project-overlay {
@@ -134,24 +102,43 @@
 
 .project-overlay span {
   color: #fec90f;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-overlay span {
+  transform: translateY(0);
 }
 
 .project-overlay h3 {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease 0.05s;
+}
+
+.project-card:hover .project-overlay h3 {
+  transform: translateY(0);
 }
 
 .project-overlay p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  line-height: 1.4;
   margin: 0;
+  transform: translateY(10px);
+  transition: transform 0.3s ease 0.1s;
+}
+
+.project-card:hover .project-overlay p {
+  transform: translateY(0);
 }
 
 @media (max-width: 900px) {
@@ -170,31 +157,33 @@
   }
 }
 
-/* Botão Ver mais */
+/* Botão Ver mais - ultra clean */
 .projects-more {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 56px;
 }
 
 .show-more-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 32px;
-  background: #000c24;
+  gap: 8px;
+  background: transparent;
+  color: #000c24;
+  padding: 8px 0;
   border: none;
-  border-radius: 100px;
-  color: #ffffff;
-  font-size: 0.9375rem;
+  border-bottom: 1.5px solid #000c24;
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .show-more-btn:hover {
-  background: #0d1525;
-  transform: translateY(-2px);
+  gap: 12px;
+  border-bottom-color: #fec90f;
+  color: #000c24;
+  opacity: 0.7;
 }
 
 .arrow {

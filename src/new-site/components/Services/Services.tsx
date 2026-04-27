@@ -17,10 +17,10 @@ export default function Services({ language }: ServicesProps) {
     <section className="services" id="servicos">
       <div className="services-container">
         <div className="services-header">
-          <span className="services-label">O que fazemos</span>
+          <span className="services-label">{content.services.badge}</span>
           <h2 className="services-title">
             {content.services.title}
-            <span>{content.services.highlight}</span>
+            <span> {content.services.highlight}</span>
           </h2>
         </div>
 

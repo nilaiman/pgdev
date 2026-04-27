@@ -20,32 +20,33 @@ export default function Hero({ language }: HeroProps) {
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Sites e sistemas{' '}
-            <span className="hero-highlight">profissionais</span>
-            <br /> para seu negócio
+            {language === 'pt' ? 'Sites e sistemas' : 'Sitios y sistemas'}{' '}
+            <span className="hero-highlight">{language === 'pt' ? 'profissionais' : 'profesionales'}</span>
+            <br /> {language === 'pt' ? 'para seu negócio' : 'para tu negocio'}
           </h1>
 
           <p className="hero-text">
-            Desenvolvimento de sites institucionais, landing pages, 
-            sistemas web e automações. Tudo sob medida para sua empresa.
+            {language === 'pt' 
+              ? 'Desenvolvimento de sites institucionais, landing pages, sistemas web e automações. Tudo sob medida para sua empresa.'
+              : 'Desarrollo de sitios institucionales, landing pages, sistemas web y automatizaciones. Todo a medida para tu empresa.'}
           </p>
 
           <div className="hero-features">
             <div className="feature">
               <CheckCircle size={18} />
-              <span>Sites responsivos e otimizados</span>
+              <span>{language === 'pt' ? 'Sites responsivos e otimizados' : 'Sitios responsivos y optimizados'}</span>
             </div>
             <div className="feature">
               <CheckCircle size={18} />
-              <span>Sistemas personalizados</span>
+              <span>{language === 'pt' ? 'Sistemas personalizados' : 'Sistemas personalizados'}</span>
             </div>
             <div className="feature">
               <CheckCircle size={18} />
-              <span>Automação de processos</span>
+              <span>{language === 'pt' ? 'Automação de processos' : 'Automatización de procesos'}</span>
             </div>
             <div className="feature">
               <CheckCircle size={18} />
-              <span>Suporte e manutenção</span>
+              <span>{language === 'pt' ? 'Suporte e manutenção' : 'Soporte y mantenimiento'}</span>
             </div>
           </div>
 
@@ -56,7 +57,7 @@ export default function Hero({ language }: HeroProps) {
               rel="noopener noreferrer" 
               className="hero-btn primary"
             >
-              Solicitar orçamento
+              {content.hero.primaryButton}
               <ArrowRight size={16} />
             </a>
             <ProjectPreview language={language} />
@@ -65,15 +66,15 @@ export default function Hero({ language }: HeroProps) {
           <div className="hero-stats">
             <div className="stat">
               <Lightbulb size={18} color="#fec90f" />
-              Ideia <span>→ Projeto</span>
+              {language === 'pt' ? 'Ideia' : 'Idea'} <span>{language === 'pt' ? '→ Projeto' : '→ Proyecto'}</span>
             </div>
             <div className="stat">
               <Code size={18} color="#fec90f" />
-              Projeto <span>→ Site no ar</span>
+              {language === 'pt' ? 'Projeto' : 'Proyecto'} <span>{language === 'pt' ? '→ Site no ar' : '→ Sitio online'}</span>
             </div>
             <div className="stat">
               <TrendingUp size={18} color="#fec90f" />
-              Site <span>→ Resultado</span>
+              {language === 'pt' ? 'Site' : 'Sitio'} <span>{language === 'pt' ? '→ Resultado' : '→ Resultado'}</span>
             </div>
           </div>
         </div>
