@@ -69,7 +69,7 @@
   background: #fec90f;
 }
 
-/* Actions */
+/* Actions Desktop */
 .actions {
   display: flex;
   align-items: center;
@@ -126,8 +126,40 @@
   box-shadow: inset 0 0 0 2px #fec90f;
 }
 
+/* SELETOR DE IDIOMA MOBILE - DENTRO DO HEADER, FORA DO MENU */
+.mobile-lang-header {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 8px;
+  border-radius: 30px;
+  margin-right: 12px;
+}
+
+.mobile-lang-header-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.mobile-lang-header-btn.active {
+  background: #fec90f;
+  color: #000c24;
+}
+
+.mobile-lang-header-btn:hover:not(.active) {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* ============================================
-   MOBILE MENU - SIMPLES E DIRETO
+   MOBILE MENU
    ============================================ */
 
 .mobile-btn {
@@ -177,33 +209,6 @@
   color: #fec90f;
 }
 
-.mobile-lang {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.mobile-lang-btn {
-  flex: 1;
-  padding: 14px;
-  background: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.2s;
-}
-
-.mobile-lang-btn.active {
-  background: #fec90f;
-  border-color: #fec90f;
-  color: #000c24;
-  font-weight: 600;
-}
-
 .mobile-cta {
   display: flex;
   align-items: center;
@@ -223,6 +228,20 @@
   background: #ffd43b;
 }
 
+/* Link ativo */
+.nav-link.active {
+  color: #fec90f !important;
+  background: transparent !important;
+}
+
+.mobile-nav a.active {
+  color: #fec90f !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
 @media (max-width: 900px) {
   .nav,
   .actions {
@@ -231,6 +250,10 @@
 
   .mobile-btn {
     display: block;
+  }
+
+  .mobile-lang-header {
+    display: flex;
   }
 }
 
@@ -247,6 +270,16 @@
   .mobile-menu {
     top: 64px;
   }
+
+  .mobile-lang-header {
+    padding: 3px 6px;
+    margin-right: 8px;
+  }
+
+  .mobile-lang-header-btn {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -262,13 +295,14 @@
   .mobile-menu {
     top: 60px;
   }
-}
-/* Link ativo */
-.nav-link.active {
-  color: #fec90f !important;
-  background: transparent !important;
-}
 
-.mobile-nav a.active {
-  color: #fec90f !important;
+  .mobile-lang-header {
+    padding: 3px 5px;
+    margin-right: 6px;
+  }
+
+  .mobile-lang-header-btn {
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
 }

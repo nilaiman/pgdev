@@ -65,6 +65,12 @@ export default function Header({ language, onChangeLanguage }: HeaderProps) {
           </a>
         </div>
 
+        {/* SELETOR DE IDIOMA MOBILE - DENTRO DO HEADER, FORA DO MENU */}
+        <div className="mobile-lang-header">
+          <button className={`mobile-lang-header-btn ${language === 'pt' ? 'active' : ''}`} onClick={() => onChangeLanguage('pt')}>PT</button>
+          <button className={`mobile-lang-header-btn ${language === 'es' ? 'active' : ''}`} onClick={() => onChangeLanguage('es')}>ES</button>
+        </div>
+
         <button type="button" className={`mobile-btn ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Menu">
           {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -79,11 +85,6 @@ export default function Header({ language, onChangeLanguage }: HeaderProps) {
             <a href="#sobre" className={activeSection === 'sobre' ? 'active' : ''} onClick={closeMenu}>{content.header.about}</a>
             <a href="#contato" className={activeSection === 'contato' ? 'active' : ''} onClick={closeMenu}>{content.header.contact}</a>
           </nav>
-
-          <div className="mobile-lang">
-            <button className={`mobile-lang-btn ${language === 'pt' ? 'active' : ''}`} onClick={() => onChangeLanguage('pt')}>Português</button>
-            <button className={`mobile-lang-btn ${language === 'es' ? 'active' : ''}`} onClick={() => onChangeLanguage('es')}>Español</button>
-          </div>
 
           <a href="https://wa.me/5511961111894" target="_blank" rel="noopener noreferrer" className="mobile-cta" onClick={closeMenu}>
             <MessageCircle size={16} />
