@@ -78,63 +78,63 @@ export const pt = {
     ],
   },
 
-  projects: {
-    badge: 'Projetos',
-    title: 'Exemplos pensados para transmitir',
-    highlight: 'confiança e resultado',
-    text:
-      'Aqui você pode mostrar projetos que representem a qualidade do seu trabalho e o tipo de solução que entrega para cada cliente.',
-    items: [
-      {
-        category: 'Site institucional',
-        title: 'Apresentação profissional para negócios e especialistas',
-        description:
-          'Estrutura pensada para transmitir confiança, apresentar serviços com clareza e facilitar o contato com potenciais clientes.',
-        results: ['Visual moderno', 'Estrutura estratégica', 'Contato mais fácil'],
-        linkLabel: 'Ver projeto',
-      },
-      {
-        category: 'Sistema sob medida',
-        title: 'Organização de processos com mais controle da operação',
-        description:
-          'Painel desenvolvido para centralizar informações, melhorar o fluxo do negócio e reduzir trabalho manual no dia a dia.',
-        results: ['Mais organização', 'Gestão visual', 'Processos mais claros'],
-        linkLabel: 'Ver detalhes',
-      },
-      {
-        category: 'Landing page',
-        title: 'Página focada em presença digital e geração de contatos',
-        description:
-          'Projeto com foco em apresentar valor, destacar diferenciais e levar o visitante para uma ação clara de contato.',
-        results: ['Mensagem objetiva', 'Visual premium', 'CTA estratégico'],
-        linkLabel: 'Ver projeto',
-      },
-      {
-        category: 'E-commerce',
-        title: 'Loja virtual completa para vender mais',
-        description:
-          'Plataforma de vendas online com gestão de produtos, pagamentos e entregas integradas.',
-        results: ['Vitrine de produtos', 'Checkout otimizado', 'Painel de gestão'],
-        linkLabel: 'Ver projeto',
-      },
-      {
-        category: 'Dashboard',
-        title: 'Painel de controle para tomada de decisão',
-        description:
-          'Dashboard com métricas, gráficos e relatórios para acompanhar o desempenho do negócio.',
-        results: ['Indicadores visuais', 'Relatórios em tempo real', 'Filtros personalizados'],
-        linkLabel: 'Ver detalhes',
-      },
-      {
-        category: 'Portal web',
-        title: 'Portal com área de membros e conteúdo exclusivo',
-        description:
-          'Estrutura completa para portais de conteúdo com login, assinaturas e áreas restritas.',
-        results: ['Área de membros', 'Gestão de assinaturas', 'Conteúdo exclusivo'],
-        linkLabel: 'Ver projeto',
-      },
-    ],
-  },
+projects: {
+  badge: 'Projetos',
+  title: 'Exemplos pensados para transmitir',
+  highlight: 'confiança e resultado',
+  text:
+    'Projetos reais desenvolvidos para negócios que buscavam mais presença digital, organização e conversão.',
+  items: [
+    {
+      category: 'Site institucional',
+      title: 'Dr. Bruno Ribeiro • Fisioterapeuta',
+      description:
+        'Site institucional profissional com foco em autoridade, agendamento e captação de novos pacientes via WhatsApp.',
+      results: ['Mais confiança', 'Contato direto', 'Presença profissional'],
+      linkLabel: 'Ver projeto',
+    },
+    {
+      category: 'E-commerce',
+      title: 'Kushi • Moda online',
+      description:
+        'Loja virtual de moda com catálogo organizado, promoções sazonais e experiência pensada para aumentar vendas online.',
+      results: ['Catálogo estratégico', 'Mais vendas', 'Visual moderno'],
+      linkLabel: 'Ver projeto',
+    },
+    {
+      category: 'Landing page',
+      title: 'Max Sorvetes • Página comercial',
+      description:
+        'Landing page criada para gerar pedidos no WhatsApp, fortalecer presença local e facilitar conversões rápidas.',
+      results: ['Mais pedidos', 'WhatsApp direto', 'SEO local'],
+      linkLabel: 'Ver projeto',
+    },
+    {
+      category: 'Sistema de agendamento',
+      title: 'Barbearia • Agenda online',
+      description:
+        'Sistema de agendamento para barbearia com controle de horários, clientes e organização da rotina diária.',
+      results: ['Agenda prática', 'Menos faltas', 'Mais organização'],
+      linkLabel: 'Ver sistema',
+    },
+    {
+      category: 'Sistema de agendamento',
+      title: 'Petshop • Gestão de serviços',
+      description:
+        'Plataforma de agendamento para petshop com gestão de serviços, agenda e atendimento mais profissional.',
+      results: ['Agenda rápida', 'Gestão de clientes', 'Atendimento melhor'],
+      linkLabel: 'Ver sistema',
+    },
+    {
+      category: 'Sistema de agendamento',
+      title: 'Clínica • Consultas online',
+      description:
+        'Sistema de agendamento para clínica com controle de consultas, agenda inteligente e melhor experiência para pacientes.',
+      results: ['Consultas organizadas', 'Agenda eficiente', 'Mais praticidade'],
+      linkLabel: 'Ver sistema',
+    },
+  ],
+},
 
   about: {
     badge: 'Sobre',
