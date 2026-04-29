@@ -179,9 +179,11 @@ export const es = {
       '¡Hola! Vi tu sitio y quiero entender cuál es la mejor solución para mi negocio.',
   },
 
-  footer: {
-    text:
-      'Sitios y sistemas profesionales para negocios que quieren crecer con más presencia y organización.',
+   footer: {
+    text: 'Sitios y sistemas profesionales para negocios que quieren crecer con más presencia y organización.',
+    contact: 'Contacto',
+    socialMedia: 'Redes Sociales',
     copyright: '© 2026 PabloG.Dev. Todos los derechos reservados.',
-  },
+    accentColor: '#fec90f'
+  }
 }
