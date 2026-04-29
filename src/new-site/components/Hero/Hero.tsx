@@ -27,8 +27,8 @@ export default function Hero({ language }: HeroProps) {
 
           <p className="hero-text">
             {language === 'pt' 
-              ? 'Desenvolvimento de sites institucionais, landing pages, sistemas web e automações. Tudo sob medida para sua empresa.'
-              : 'Desarrollo de sitios institucionales, landing pages, sistemas web y automatizaciones. Todo a medida para tu empresa.'}
+              ? 'Desenvolvimento de sites institucionais, landing pages, sistemas web e agendamentos. Tudo sob medida para sua empresa.'
+              : 'Desarrollo de sitios institucionales, landing pages, sistemas web y programación. Todo a medida para tu empresa.'}
           </p>
 
           <div className="hero-features">
