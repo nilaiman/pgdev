@@ -13,6 +13,13 @@ type HeroProps = {
 export default function Hero({ language }: HeroProps) {
   const content = language === 'pt' ? pt : es
 
+  const whatsappMessage =
+    language === 'pt'
+      ? 'Olá! Vi o site da PabloG.Dev e quero entender a melhor solução para meu negócio.'
+      : '¡Hola! Vi el sitio de PabloG.Dev y quiero entender la mejor solución para mi negocio.'
+
+  const whatsappLink = `https://wa.me/5511961111894?text=${encodeURIComponent(whatsappMessage)}`
+
   return (
     <section className="hero" id="inicio">
       <img src={logo} alt="" className="hero-bg-logo" aria-hidden="true" />
@@ -52,7 +59,7 @@ export default function Hero({ language }: HeroProps) {
 
           <div className="hero-actions">
             <a 
-              href="https://wa.me/5511961111894" 
+              href={whatsappLink}
               target="_blank" 
               rel="noopener noreferrer" 
               className="hero-btn primary"

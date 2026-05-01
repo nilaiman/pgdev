@@ -9,7 +9,7 @@ export const pt = {
   },
 
   hero: {
-    badge: 'Sites • Sistemas • Automação',
+    badge: 'Sites • Sistemas • Agendamentos',
     title: 'Sites e sistemas profissionais para',
     highlight: 'fazer seu negócio crescer',
     text:

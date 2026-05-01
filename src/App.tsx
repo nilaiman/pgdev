@@ -5,6 +5,7 @@ import './new-site/styles/global.css'
 
 import Header from './new-site/components/Header/Header'
 import Hero from './new-site/components/Hero/Hero'
+import ProcessBanner from './new-site/components/ProcessBanner/ProcessBanner'
 import Services from './new-site/components/Services/Services'
 import Projects from './new-site/components/Projects/Projects'
 import About from './new-site/components/About/About'
@@ -37,6 +38,7 @@ function App() {
       <Header language={language} onChangeLanguage={setLanguage} />
       <main>
         <Hero language={language} />
+        <ProcessBanner />
         <Services language={language} />
         <Projects language={language} />
         <About language={language} />
