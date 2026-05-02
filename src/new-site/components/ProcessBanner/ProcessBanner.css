@@ -18,17 +18,13 @@
   position: relative;
 }
 
-.process-desktop {
+.process-image {
   display: block;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   border-radius: 28px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
-.process-mobile {
-  display: none;
 }
 
 /* Botões - discretos */
@@ -108,23 +104,14 @@
   }
 }
 
-/* Mobile */
+/* Mobile - apenas ajustes de tamanho */
 @media (max-width: 768px) {
   .process-banner {
     padding: 40px 0;
   }
 
-  .process-desktop {
-    display: none;
-  }
-
-  .process-mobile {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  .process-image {
+    max-width: 90%;
   }
 
   .carousel-btn {
